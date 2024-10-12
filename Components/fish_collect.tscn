@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3fv6l61mpjvo"]
+
+[ext_resource type="Script" path="res://Scripts/FishCollect.gd" id="1_b1dud"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5q6cs"]
+radius = 28.0
+height = 108.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bclby"]
+
+[node name="FishCollect" type="Node2D"]
+
+[node name="PlayerArea2D" type="Area2D" parent="."]
+script = ExtResource("1_b1dud")
+
+[node name="PlayerCollisionShape2D" type="CollisionShape2D" parent="PlayerArea2D"]
+shape = SubResource("CapsuleShape2D_5q6cs")
+
+[node name="PlayerMesh2Dtest" type="MeshInstance2D" parent="."]
+modulate = Color(0.306635, 0.0010365, 0.525844, 1)
+scale = Vector2(55, 55)
+mesh = SubResource("CapsuleMesh_bclby")
