@@ -10,8 +10,10 @@
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="PlayerTestCharacterBody2D" parent="." instance=ExtResource("2_ru0e0")]
+position = Vector2(0, 2)
 
 [node name="FishCollect" parent="PlayerTestCharacterBody2D" instance=ExtResource("1_vr11j")]
+position = Vector2(2, -4)
 
 [node name="CollectedFishControl" type="Control" parent="."]
 layout_mode = 3
