@@ -1,55 +1,226 @@
-[gd_scene load_steps=5 format=3 uid="uid://g7xgkwwsalab"]
+[gd_scene load_steps=21 format=3 uid="uid://g7xgkwwsalab"]
 
-[ext_resource type="PackedScene" uid="uid://c3fv6l61mpjvo" path="res://Components/fish_collect.tscn" id="1_vr11j"]
+[ext_resource type="Script" path="res://Scripts/sceneManager.gd" id="1_dqiju"]
+[ext_resource type="Texture2D" uid="uid://x0u624kbbepl" path="res://layout/BG Layout_Page_01.jpg" id="1_fr252"]
 [ext_resource type="PackedScene" uid="uid://d2nll4g1yk0gh" path="res://GameObjects/Fish.tscn" id="2_orlob"]
+[ext_resource type="Texture2D" uid="uid://c4be6yrd0v51s" path="res://layout/BG Layout_Page_02.jpg" id="2_rfwdo"]
 [ext_resource type="PackedScene" uid="uid://crg7a068vheai" path="res://GameObjects/PlayerTest.tscn" id="2_ru0e0"]
 [ext_resource type="Script" path="res://Scripts/FishScore.gd" id="3_yt2u6"]
+[ext_resource type="Texture2D" uid="uid://bttmkteh81kyw" path="res://layout/BG Layout_Page_03.jpg" id="4_fwrbr"]
+[ext_resource type="Texture2D" uid="uid://bvxvh2tq8dvck" path="res://layout/BG Layout_Page_04.jpg" id="5_b11rn"]
+[ext_resource type="Texture2D" uid="uid://bv4i1ibgiowlk" path="res://layout/BG Layout_Page_05.jpg" id="6_rmdn5"]
+[ext_resource type="Texture2D" uid="uid://7lqjjouyarr8" path="res://layout/BG Layout_Page_06.jpg" id="7_ppyvg"]
+[ext_resource type="Texture2D" uid="uid://cnjdgc2dgxlt4" path="res://layout/BG Layout_Page_07.jpg" id="8_2e7kl"]
+[ext_resource type="Texture2D" uid="uid://dyp5lj5knqexv" path="res://layout/BG Layout_Page_08.jpg" id="9_utpwh"]
+[ext_resource type="Texture2D" uid="uid://h5ywgrb5fxrq" path="res://layout/BG Layout_Page_09.jpg" id="10_4q4v2"]
+[ext_resource type="Texture2D" uid="uid://b1bu3f0pxh4fp" path="res://layout/BG Layout_Page_10.jpg" id="11_jp35h"]
+[ext_resource type="Texture2D" uid="uid://c1e10axbalxe5" path="res://layout/BG Layout_Page_11.jpg" id="12_qxo6j"]
+[ext_resource type="Texture2D" uid="uid://8ela2sxjd1gd" path="res://layout/BG Layout_Page_12.jpg" id="13_yyhiw"]
+[ext_resource type="Script" path="res://Scenes/flashbacksManager.gd" id="16_hixwt"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3unfs"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_jbjt8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_la17o"]
+size = Vector2(2322, 102)
 
 [node name="TestScene" type="Node2D"]
+script = ExtResource("1_dqiju")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Layouts" type="Node2D" parent="."]
+
+[node name="BgLayoutPage01" type="Sprite2D" parent="Layouts"]
+position = Vector2(-2, 6)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("1_fr252")
+
+[node name="BgLayoutPage02" type="Sprite2D" parent="Layouts"]
+position = Vector2(1155, 4)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("2_rfwdo")
+
+[node name="BgLayoutPage03" type="Sprite2D" parent="Layouts"]
+position = Vector2(2314, 8)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("4_fwrbr")
+
+[node name="BgLayoutPage04" type="Sprite2D" parent="Layouts"]
+position = Vector2(3469, 486)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("5_b11rn")
+
+[node name="BgLayoutPage05" type="Sprite2D" parent="Layouts"]
+position = Vector2(4626, 488)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("6_rmdn5")
+
+[node name="BgLayoutPage06" type="Sprite2D" parent="Layouts"]
+position = Vector2(5782, 733)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("7_ppyvg")
+
+[node name="BgLayoutPage07" type="Sprite2D" parent="Layouts"]
+position = Vector2(6943, 1096)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("8_2e7kl")
+
+[node name="BgLayoutPage08" type="Sprite2D" parent="Layouts"]
+position = Vector2(8106, 870)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("9_utpwh")
+
+[node name="BgLayoutPage09" type="Sprite2D" parent="Layouts"]
+position = Vector2(9260, 1143)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("10_4q4v2")
+
+[node name="BgLayoutPage10" type="Sprite2D" parent="Layouts"]
+position = Vector2(10426, 1755)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("11_jp35h")
+
+[node name="BgLayoutPage11" type="Sprite2D" parent="Layouts"]
+position = Vector2(10354, 2395)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("12_qxo6j")
+
+[node name="BgLayoutPage12" type="Sprite2D" parent="Layouts"]
+position = Vector2(11515, 2762)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("13_yyhiw")
 
 [node name="PlayerTestCharacterBody2D" parent="." instance=ExtResource("2_ru0e0")]
 position = Vector2(0, 2)
 
-[node name="FishCollect" parent="PlayerTestCharacterBody2D" instance=ExtResource("1_vr11j")]
-position = Vector2(2, -4)
-
-[node name="CollectedFishControl" type="Control" parent="."]
+[node name="CollectedFishControl" type="Control" parent="PlayerTestCharacterBody2D"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -560.0
-offset_top = -314.0
+offset_top = -316.0
 offset_right = -289.0
-offset_bottom = -274.0
+offset_bottom = -276.0
 
-[node name="Text" type="RichTextLabel" parent="CollectedFishControl"]
+[node name="Text" type="RichTextLabel" parent="PlayerTestCharacterBody2D/CollectedFishControl"]
 layout_mode = 0
 offset_right = 313.0
 offset_bottom = 65.0
 text = "Amount of fish collected: "
 script = ExtResource("3_yt2u6")
 
+[node name="Flashbacks" type="Control" parent="PlayerTestCharacterBody2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -581.0
+offset_top = -319.0
+offset_right = -541.0
+offset_bottom = -279.0
+script = ExtResource("16_hixwt")
+
+[node name="Flashback1" type="Panel" parent="PlayerTestCharacterBody2D/Flashbacks"]
+visible = false
+material = SubResource("CanvasItemMaterial_3unfs")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 647.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback1"]
+layout_mode = 0
+offset_left = 514.0
+offset_top = 296.0
+offset_right = 709.0
+offset_bottom = 465.0
+text = "Flashback 1
+Press Space to continue"
+
+[node name="Flashback2" type="Panel" parent="PlayerTestCharacterBody2D/Flashbacks"]
+visible = false
+material = SubResource("CanvasItemMaterial_3unfs")
+offset_right = 1152.0
+offset_bottom = 647.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback2"]
+layout_mode = 0
+offset_left = 514.0
+offset_top = 296.0
+offset_right = 709.0
+offset_bottom = 465.0
+text = "Flashback 2
+Press Space to continue"
+
+[node name="Flashback3" type="Panel" parent="PlayerTestCharacterBody2D/Flashbacks"]
+visible = false
+material = SubResource("CanvasItemMaterial_3unfs")
+offset_right = 1152.0
+offset_bottom = 647.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback3"]
+layout_mode = 0
+offset_left = 514.0
+offset_top = 296.0
+offset_right = 709.0
+offset_bottom = 465.0
+text = "Flashback 3
+Press Space to continue"
+
+[node name="Flashback4" type="Panel" parent="PlayerTestCharacterBody2D/Flashbacks"]
+visible = false
+material = SubResource("CanvasItemMaterial_3unfs")
+offset_right = 1152.0
+offset_bottom = 647.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback4"]
+layout_mode = 0
+offset_left = 514.0
+offset_top = 296.0
+offset_right = 709.0
+offset_bottom = 465.0
+text = "End of the prototype"
+
+[node name="Camera2D" type="Camera2D" parent="PlayerTestCharacterBody2D"]
+position = Vector2(0, -2)
+
 [node name="Fish1" parent="." instance=ExtResource("2_orlob")]
 modulate = Color(0.925106, 0, 0.230555, 1)
-position = Vector2(331, 121)
+position = Vector2(931, 221)
 
 [node name="Fish2" parent="." instance=ExtResource("2_orlob")]
 modulate = Color(0.759312, 0.402, 0, 1)
-position = Vector2(247, -174)
+position = Vector2(2763, 213)
 
 [node name="Fish3" parent="." instance=ExtResource("2_orlob")]
 modulate = Color(1, 0.797057, 0.244597, 1)
-position = Vector2(-82, -234)
+position = Vector2(7336, 1398)
 
 [node name="Fish4" parent="." instance=ExtResource("2_orlob")]
 modulate = Color(0.274287, 0.643954, 0, 1)
-position = Vector2(-310, -139)
+position = Vector2(11051, 2893)
 
 [node name="Fish5" parent="." instance=ExtResource("2_orlob")]
+visible = false
 modulate = Color(0, 0.446946, 0.856007, 1)
 position = Vector2(-417, 83)
 
 [node name="Fish6" parent="." instance=ExtResource("2_orlob")]
+visible = false
 modulate = Color(0.686591, 0.00168361, 0.853276, 1)
 position = Vector2(-266, 236)
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Ground"]
+position = Vector2(574.375, 281.125)
+scale = Vector2(2315.25, 101.75)
+mesh = SubResource("QuadMesh_jbjt8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+position = Vector2(483, 274)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2(97, 6)
+shape = SubResource("RectangleShape2D_la17o")
+
+[connection signal="Fishcollected" from="Fish1" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_1_fishcollected"]
+[connection signal="Fishcollected" from="Fish2" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_2_fishcollected"]
+[connection signal="Fishcollected" from="Fish3" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_3_fishcollected"]
+[connection signal="Fishcollected" from="Fish4" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_4_fishcollected"]
