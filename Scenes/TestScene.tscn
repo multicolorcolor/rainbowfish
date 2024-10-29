@@ -136,6 +136,7 @@ Press Space to continue"
 [node name="Flashback2" type="Panel" parent="PlayerTestCharacterBody2D/Flashbacks"]
 visible = false
 material = SubResource("CanvasItemMaterial_3unfs")
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 647.0
 
@@ -151,6 +152,7 @@ Press Space to continue"
 [node name="Flashback3" type="Panel" parent="PlayerTestCharacterBody2D/Flashbacks"]
 visible = false
 material = SubResource("CanvasItemMaterial_3unfs")
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 647.0
 
@@ -166,6 +168,7 @@ Press Space to continue"
 [node name="Flashback4" type="Panel" parent="PlayerTestCharacterBody2D/Flashbacks"]
 visible = false
 material = SubResource("CanvasItemMaterial_3unfs")
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 647.0
 
