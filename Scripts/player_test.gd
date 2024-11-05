@@ -55,3 +55,13 @@ func _input(event):
 			get_tree().change_scene_to_file("res://Scenes/Main menu test.tscn")
 		if event.keycode ==KEY_SPACE and SignalBus.fish == 1:
 			flashback1.visible = false
+
+
+func _on_flashbacks_flashback_time() -> void:
+	set_physics_process(false)
+	animation.stop()
+
+
+func _on_flashbacks_flashback_over() -> void:
+	set_physics_process(true)
+	animation.play()

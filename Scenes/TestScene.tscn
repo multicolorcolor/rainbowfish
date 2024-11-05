@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://g7xgkwwsalab"]
+[gd_scene load_steps=32 format=3 uid="uid://g7xgkwwsalab"]
 
 [ext_resource type="Script" path="res://Scripts/sceneManager.gd" id="1_dqiju"]
 [ext_resource type="Texture2D" uid="uid://x0u624kbbepl" path="res://layout/BG Layout_Page_01.jpg" id="1_fr252"]
@@ -26,7 +26,7 @@
 size = Vector2(2322, 102)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41sh5"]
-size = Vector2(857, 294)
+size = Vector2(857, 199)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngh10"]
 size = Vector2(858, 534)
@@ -38,7 +38,7 @@ size = Vector2(375, 245)
 size = Vector2(861, 272)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwnw3"]
-size = Vector2(1957.5, 272)
+size = Vector2(884, 272)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8agn"]
 size = Vector2(1957.5, 272)
@@ -47,10 +47,16 @@ size = Vector2(1957.5, 272)
 size = Vector2(1165, 272)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ieof3"]
-size = Vector2(1154.5, 272)
+size = Vector2(1166, 252)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7vfs"]
-size = Vector2(1119.25, 1357)
+size = Vector2(1192.25, 1357)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5t1rp"]
+size = Vector2(1192.25, 1357)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pavw5"]
+size = Vector2(1192.25, 1357)
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_dqiju")
@@ -124,40 +130,42 @@ scale = Vector2(3, 3)
 [node name="CollectedFishControl" type="Control" parent="PlayerTestCharacterBody2D"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -560.0
-offset_top = -316.0
-offset_right = -289.0
-offset_bottom = -276.0
+offset_left = -66.6667
+offset_top = -172.0
+offset_right = 204.333
+offset_bottom = -132.0
 
 [node name="Text" type="RichTextLabel" parent="PlayerTestCharacterBody2D/CollectedFishControl"]
+modulate = Color(0.366595, 0.366595, 0.366595, 1)
 layout_mode = 0
 offset_right = 313.0
 offset_bottom = 65.0
+scale = Vector2(0.613333, 0.6)
 text = "Amount of fish collected: "
 script = ExtResource("3_yt2u6")
 
 [node name="Flashbacks" type="Control" parent="PlayerTestCharacterBody2D"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -581.0
-offset_top = -319.0
-offset_right = -541.0
-offset_bottom = -279.0
+offset_left = -68.0
+offset_top = -171.333
+offset_right = 315.0
+offset_bottom = 44.6667
 script = ExtResource("16_hixwt")
 
 [node name="Flashback1" type="Panel" parent="PlayerTestCharacterBody2D/Flashbacks"]
 visible = false
 material = SubResource("CanvasItemMaterial_3unfs")
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 647.0
+offset_right = 385.0
+offset_bottom = 220.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback1"]
 layout_mode = 0
-offset_left = 514.0
-offset_top = 296.0
-offset_right = 709.0
-offset_bottom = 465.0
+offset_left = 97.6667
+offset_top = 86.6667
+offset_right = 292.667
+offset_bottom = 255.667
 text = "Flashback 1
 Press Space to continue"
 
@@ -165,15 +173,15 @@ Press Space to continue"
 visible = false
 material = SubResource("CanvasItemMaterial_3unfs")
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 647.0
+offset_right = 381.0
+offset_bottom = 214.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback2"]
 layout_mode = 0
-offset_left = 514.0
-offset_top = 296.0
-offset_right = 709.0
-offset_bottom = 465.0
+offset_left = 97.6667
+offset_top = 86.6667
+offset_right = 292.667
+offset_bottom = 255.667
 text = "Flashback 2
 Press Space to continue"
 
@@ -181,15 +189,15 @@ Press Space to continue"
 visible = false
 material = SubResource("CanvasItemMaterial_3unfs")
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 647.0
+offset_right = 383.0
+offset_bottom = 214.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback3"]
 layout_mode = 0
-offset_left = 514.0
-offset_top = 296.0
-offset_right = 709.0
-offset_bottom = 465.0
+offset_left = 97.6667
+offset_top = 86.6667
+offset_right = 292.667
+offset_bottom = 255.667
 text = "Flashback 3
 Press Space to continue"
 
@@ -197,19 +205,19 @@ Press Space to continue"
 visible = false
 material = SubResource("CanvasItemMaterial_3unfs")
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 647.0
+offset_right = 384.0
+offset_bottom = 220.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback4"]
 layout_mode = 0
-offset_left = 514.0
-offset_top = 296.0
-offset_right = 709.0
-offset_bottom = 465.0
+offset_left = 97.6667
+offset_top = 86.6667
+offset_right = 292.667
+offset_bottom = 255.667
 text = "End of the prototype"
 
 [node name="Camera2D" type="Camera2D" parent="PlayerTestCharacterBody2D"]
-position = Vector2(0, -2)
+position = Vector2(123, -63.3333)
 
 [node name="Fish1" parent="." instance=ExtResource("2_orlob")]
 modulate = Color(0.925106, 0, 0.230555, 1)
@@ -227,16 +235,6 @@ position = Vector2(7336, 1398)
 modulate = Color(0.274287, 0.643954, 0, 1)
 position = Vector2(11051, 2893)
 
-[node name="Fish5" parent="." instance=ExtResource("2_orlob")]
-visible = false
-modulate = Color(0, 0.446946, 0.856007, 1)
-position = Vector2(-417, 83)
-
-[node name="Fish6" parent="." instance=ExtResource("2_orlob")]
-visible = false
-modulate = Color(0.686591, 0.00168361, 0.853276, 1)
-position = Vector2(-266, 236)
-
 [node name="Ground" type="Node2D" parent="."]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Ground"]
@@ -252,7 +250,7 @@ position = Vector2(97, 6)
 shape = SubResource("RectangleShape2D_la17o")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2(1266.5, -45)
+position = Vector2(1266.5, 2.5)
 shape = SubResource("RectangleShape2D_41sh5")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground/StaticBody2D"]
@@ -272,7 +270,7 @@ position = Vector2(3660.5, 535)
 shape = SubResource("RectangleShape2D_j5few")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2(3736.25, 673)
+position = Vector2(4273, 673)
 shape = SubResource("RectangleShape2D_lwnw3")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Ground/StaticBody2D"]
@@ -284,13 +282,23 @@ position = Vector2(6458.5, 1283)
 shape = SubResource("RectangleShape2D_8ovf8")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2(7618.75, 1059)
+position = Vector2(7615, 1207)
 shape = SubResource("RectangleShape2D_ieof3")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2(8737.38, 1878.5)
+position = Vector2(8773.88, 1878.5)
 shape = SubResource("RectangleShape2D_y7vfs")
 
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2(9867, 3098)
+shape = SubResource("RectangleShape2D_5t1rp")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2(11046, 3365)
+shape = SubResource("RectangleShape2D_pavw5")
+
+[connection signal="FlashbackOver" from="PlayerTestCharacterBody2D/Flashbacks" to="PlayerTestCharacterBody2D" method="_on_flashbacks_flashback_over"]
+[connection signal="FlashbackTime" from="PlayerTestCharacterBody2D/Flashbacks" to="PlayerTestCharacterBody2D" method="_on_flashbacks_flashback_time"]
 [connection signal="Fishcollected" from="Fish1" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_1_fishcollected"]
 [connection signal="Fishcollected" from="Fish2" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_2_fishcollected"]
 [connection signal="Fishcollected" from="Fish3" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_3_fishcollected"]
