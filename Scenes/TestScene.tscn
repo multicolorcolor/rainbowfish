@@ -118,7 +118,8 @@ scale = Vector2(0.605, 0.605)
 texture = ExtResource("13_yyhiw")
 
 [node name="PlayerTestCharacterBody2D" parent="." instance=ExtResource("2_ru0e0")]
-position = Vector2(0, 2)
+position = Vector2(-380, 195)
+scale = Vector2(3, 3)
 
 [node name="CollectedFishControl" type="Control" parent="PlayerTestCharacterBody2D"]
 layout_mode = 3
