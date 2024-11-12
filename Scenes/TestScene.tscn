@@ -167,10 +167,10 @@ scale = Vector2(3.5, 3.5)
 [node name="CollectedFishControl" type="Control" parent="PlayerTestCharacterBody2D"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -66.6667
-offset_top = -172.0
-offset_right = 204.333
-offset_bottom = -132.0
+offset_left = -52.2857
+offset_top = -123.143
+offset_right = 218.714
+offset_bottom = -83.1429
 
 [node name="Text" type="RichTextLabel" parent="PlayerTestCharacterBody2D/CollectedFishControl"]
 modulate = Color(0.366595, 0.366595, 0.366595, 1)
@@ -184,10 +184,11 @@ script = ExtResource("3_yt2u6")
 [node name="Flashbacks" type="Control" parent="PlayerTestCharacterBody2D"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -68.0
-offset_top = -171.333
-offset_right = 315.0
-offset_bottom = 44.6667
+offset_left = -52.2857
+offset_top = -126.571
+offset_right = 330.714
+offset_bottom = 89.4283
+scale = Vector2(0.857074, 0.862739)
 script = ExtResource("16_hixwt")
 
 [node name="Flashback1" type="Panel" parent="PlayerTestCharacterBody2D/Flashbacks"]
@@ -254,22 +255,22 @@ offset_bottom = 255.667
 text = "End of the prototype"
 
 [node name="Camera2D" type="Camera2D" parent="PlayerTestCharacterBody2D"]
-position = Vector2(123, -63.3333)
+position = Vector2(112, -34.5714)
 
 [node name="Fish1" parent="." instance=ExtResource("2_orlob")]
-position = Vector2(931, 204)
+position = Vector2(2130, 271)
 
 [node name="Fish2" parent="." instance=ExtResource("2_orlob")]
 modulate = Color(0.759312, 0.402, 0, 1)
-position = Vector2(2763, 213)
+position = Vector2(4585, 247)
 
 [node name="Fish3" parent="." instance=ExtResource("2_orlob")]
 modulate = Color(1, 0.797057, 0.244597, 1)
-position = Vector2(7336, 1398)
+position = Vector2(5822, 1400)
 
 [node name="Fish4" parent="." instance=ExtResource("2_orlob")]
 modulate = Color(0.274287, 0.643954, 0, 1)
-position = Vector2(11051, 2893)
+position = Vector2(16504, 714)
 
 [node name="Ground" type="Node2D" parent="."]
 
