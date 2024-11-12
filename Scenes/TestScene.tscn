@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b1bu3f0pxh4fp" path="res://layout/BG Layout_Page_10.jpg" id="11_jp35h"]
 [ext_resource type="Texture2D" uid="uid://c1e10axbalxe5" path="res://layout/BG Layout_Page_11.jpg" id="12_qxo6j"]
 [ext_resource type="Texture2D" uid="uid://8ela2sxjd1gd" path="res://layout/BG Layout_Page_12.jpg" id="13_yyhiw"]
-[ext_resource type="Texture2D" uid="uid://or85i6soqple" path="res://layout/Background_.jpg" id="14_t55iq"]
+[ext_resource type="Texture2D" uid="uid://cc3oufrwl4k4" path="res://layout/Background_.jpg" id="14_t55iq"]
 [ext_resource type="Script" path="res://Scenes/flashbacksManager.gd" id="16_hixwt"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3unfs"]
