@@ -1,6 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://c3fv6l61mpjvo"]
 
-[ext_resource type="Script" path="res://Scripts/FishCollect.gd" id="1_b1dud"]
+[sub_resource type="GDScript" id="GDScript_jfgld"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5q6cs"]
 radius = 12.0
@@ -9,7 +21,7 @@ height = 32.0
 [node name="FishCollect" type="Node2D"]
 
 [node name="PlayerArea2D" type="Area2D" parent="."]
-script = ExtResource("1_b1dud")
+script = SubResource("GDScript_jfgld")
 
 [node name="PlayerCollisionShape2D" type="CollisionShape2D" parent="PlayerArea2D"]
 shape = SubResource("CapsuleShape2D_5q6cs")

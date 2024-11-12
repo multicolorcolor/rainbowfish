@@ -1,24 +1,85 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2nll4g1yk0gh"]
+[gd_scene load_steps=12 format=3 uid="uid://d2nll4g1yk0gh"]
 
 [ext_resource type="Script" path="res://Scripts/fish_col_control.gd" id="1_5nes6"]
+[ext_resource type="Texture2D" uid="uid://ciuyar23mvdgo" path="res://Placeholder/Fish animation/Ppl1.PNG" id="2_hvry8"]
+[ext_resource type="Texture2D" uid="uid://duam0ikykoyhd" path="res://Placeholder/Fish animation/Ppl2.PNG" id="3_o3aq4"]
+[ext_resource type="Texture2D" uid="uid://cx5ncyejvvx8a" path="res://Placeholder/Fish animation/Ppl3.PNG" id="4_sttid"]
+[ext_resource type="Texture2D" uid="uid://h1g4awoujodj" path="res://Placeholder/Fish animation/Ppl4.PNG" id="5_ewohp"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_22a0l"]
-radius = 25.0799
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mtrnl"]
+radius = 25.0
+height = 64.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_6h88f"]
 
+[sub_resource type="Animation" id="Animation_tft1i"]
+resource_name = "Swim"
+length = 0.3
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_hvry8"), ExtResource("3_o3aq4"), ExtResource("4_sttid"), ExtResource("5_ewohp")]
+}
+
+[sub_resource type="Animation" id="Animation_3h3xy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_hvry8")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_17dp7"]
+_data = {
+"RESET": SubResource("Animation_3h3xy"),
+"Swim": SubResource("Animation_tft1i")
+}
+
+[sub_resource type="AnimationRootNode" id="AnimationRootNode_celji"]
+
 [node name="Fish" type="Node2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_5nes6")
 
 [node name="Area2D" type="Area2D" parent="."]
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_22a0l")
+scale = Vector2(1, 0.471259)
+shape = SubResource("CapsuleShape2D_mtrnl")
 
 [node name="Fish2Dtest" type="MeshInstance2D" parent="."]
+visible = false
 position = Vector2(0, 9.05991e-06)
 scale = Vector2(50.0567, 50)
 mesh = SubResource("SphereMesh_6h88f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_hvry8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_17dp7")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationRootNode_celji")
+anim_player = NodePath("../AnimationPlayer")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
