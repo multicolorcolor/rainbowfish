@@ -1,7 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://crg7a068vheai"]
+[gd_scene load_steps=18 format=3 uid="uid://crg7a068vheai"]
 
 [ext_resource type="Script" path="res://Scripts/player_test.gd" id="1_hd4yp"]
-[ext_resource type="Script" path="res://Scripts/FishCollect.gd" id="2_2v2jq"]
 [ext_resource type="Texture2D" uid="uid://duqkv2h356ul2" path="res://Placeholder/Character/Walking Cycle/W1.png" id="12_s1yii"]
 [ext_resource type="Texture2D" uid="uid://c7sfandxwtcsn" path="res://Placeholder/Character/Walking Cycle/W2.png" id="13_w0viv"]
 [ext_resource type="Texture2D" uid="uid://dp6sdmetroqrp" path="res://Placeholder/Character/Walking Cycle/W3.png" id="14_tdg07"]
@@ -113,7 +112,6 @@ position = Vector2(0, -11)
 script = ExtResource("1_hd4yp")
 
 [node name="PlayerArea2D" type="Area2D" parent="."]
-script = ExtResource("2_2v2jq")
 
 [node name="PlayerCollisionShape2D" type="CollisionShape2D" parent="PlayerArea2D"]
 position = Vector2(0, -8)
