@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://g7xgkwwsalab"]
+[gd_scene load_steps=34 format=3 uid="uid://g7xgkwwsalab"]
 
 [ext_resource type="Script" path="res://Scripts/sceneManager.gd" id="1_dqiju"]
 [ext_resource type="Texture2D" uid="uid://x0u624kbbepl" path="res://layout/BG Layout_Page_01.jpg" id="1_fr252"]
@@ -33,6 +33,12 @@
 [ext_resource type="Texture2D" uid="uid://dmddp2bc8vp8y" path="res://layout/background/Background__14.jpg" id="27_jt5sp"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3unfs"]
+
+[sub_resource type="Curve2D" id="Curve2D_g3ntp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 247, -115, 0, 0, 0, 0, 1714, -53, 0, 0, 0, 0, 2239, 136, 0, 0, 0, 0, 3228, 83, 0, 0, 0, 0, 3990, 115, 0, 0, 0, 0, 4286, 261, 0, 0, 0, 0, 3666, 453, 0, 0, 0, 0, 2065, 327, 0, 0, 0, 0, 1347, 155, 0, 0, 0, 0, 858, 102, 0, 0, 0, 0, 15, -14)
+}
+point_count = 11
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_dqiju")
@@ -184,10 +190,10 @@ script = ExtResource("3_yt2u6")
 [node name="Flashbacks" type="Control" parent="PlayerTestCharacterBody2D"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -52.2857
-offset_top = -126.571
-offset_right = 330.714
-offset_bottom = 89.4283
+offset_left = -29.4286
+offset_top = -112.571
+offset_right = 353.571
+offset_bottom = 103.428
 scale = Vector2(0.857074, 0.862739)
 script = ExtResource("16_hixwt")
 
@@ -260,10 +266,6 @@ position = Vector2(112, -34.5714)
 [node name="Fish1" parent="." instance=ExtResource("2_orlob")]
 position = Vector2(2130, 271)
 
-[node name="Fish2" parent="." instance=ExtResource("2_orlob")]
-modulate = Color(0.759312, 0.402, 0, 1)
-position = Vector2(4585, 247)
-
 [node name="Fish3" parent="." instance=ExtResource("2_orlob")]
 modulate = Color(1, 0.797057, 0.244597, 1)
 position = Vector2(5822, 1400)
@@ -280,9 +282,25 @@ position = Vector2(-582, 206)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
 polygon = PackedVector2Array(7, -1, 60, 0, 569, 12, 986, 10, 1159, 3, 1733, 14, 2269, 60, 2701, 104, 3107, 97, 3405, 70, 3732, 72, 4022, 156, 4686, 237, 4888, 237, 4986, 263, 5109, 232, 5390, 256, 5487, 348, 5688, 446, 6021, 473, 6586, 468, 7009, 464, 7312, 566, 7640, 569, 8166, 580, 8410, 611, 8429, 736, 8452, 996, 8444, 1084, 8263, 1087, 7742, 1092, 7459, 1169, 7275, 1132, 7168, 1072, 6920, 986, 6523, 959, 6122, 1010, 6053, 1130, 6229, 1237, 6507, 1331, 6683, 1464, 6984, 1493, 7100, 1577, 7366, 1772, 7817, 1816, 8672, 1815, 9990, 1798, 10973, 1836, 11753, 1857, 12718, 1873, 13498, 1873, 14026, 1540, 14963, 1146, 15457, 1066, 15797, 1029, 16118, 779, 16530, 693, 16965, 676, 17182, 665, 17279.2, 723.044, 17273, 77, 14195, 216, 13688, 638, 12889, 1209, 11642, 1461, 10433, 1081, 13058, -542, 17950, -349, 17495, 852, 16865, 3056, -502, 2449, -88, -401, 0, -490)
 
+[node name="PathsForFishes" type="Node2D" parent="."]
+
+[node name="PathFish2" type="Path2D" parent="PathsForFishes"]
+position = Vector2(3453, 262)
+curve = SubResource("Curve2D_g3ntp")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="PathsForFishes/PathFish2"]
+position = Vector2(247, -115)
+rotation = 0.042238
+rotates = false
+
+[node name="Fish2" parent="PathsForFishes/PathFish2/PathFollow2D" instance=ExtResource("2_orlob")]
+modulate = Color(0.759312, 0.402, 0, 1)
+position = Vector2(0.0844727, 1.9982)
+rotation = -0.042238
+
 [connection signal="FlashbackOver" from="PlayerTestCharacterBody2D/Flashbacks" to="PlayerTestCharacterBody2D" method="_on_flashbacks_flashback_over"]
 [connection signal="FlashbackTime" from="PlayerTestCharacterBody2D/Flashbacks" to="PlayerTestCharacterBody2D" method="_on_flashbacks_flashback_time"]
 [connection signal="Fishcollected" from="Fish1" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_1_fishcollected"]
-[connection signal="Fishcollected" from="Fish2" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_2_fishcollected"]
 [connection signal="Fishcollected" from="Fish3" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_3_fishcollected"]
 [connection signal="Fishcollected" from="Fish4" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_4_fishcollected"]
+[connection signal="Fishcollected" from="PathsForFishes/PathFish2/PathFollow2D/Fish2" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_2_fishcollected"]
