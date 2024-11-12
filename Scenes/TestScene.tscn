@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://g7xgkwwsalab"]
+[gd_scene load_steps=20 format=3 uid="uid://g7xgkwwsalab"]
 
 [ext_resource type="Script" path="res://Scripts/sceneManager.gd" id="1_dqiju"]
 [ext_resource type="Texture2D" uid="uid://x0u624kbbepl" path="res://layout/BG Layout_Page_01.jpg" id="1_fr252"]
@@ -16,116 +16,88 @@
 [ext_resource type="Texture2D" uid="uid://b1bu3f0pxh4fp" path="res://layout/BG Layout_Page_10.jpg" id="11_jp35h"]
 [ext_resource type="Texture2D" uid="uid://c1e10axbalxe5" path="res://layout/BG Layout_Page_11.jpg" id="12_qxo6j"]
 [ext_resource type="Texture2D" uid="uid://8ela2sxjd1gd" path="res://layout/BG Layout_Page_12.jpg" id="13_yyhiw"]
+[ext_resource type="Texture2D" uid="uid://or85i6soqple" path="res://layout/Background_.jpg" id="14_t55iq"]
 [ext_resource type="Script" path="res://Scenes/flashbacksManager.gd" id="16_hixwt"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3unfs"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_jbjt8"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_la17o"]
-size = Vector2(2322, 102)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_41sh5"]
-size = Vector2(857, 199)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngh10"]
-size = Vector2(858, 534)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e38sh"]
-size = Vector2(375, 245)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5few"]
-size = Vector2(861, 272)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwnw3"]
-size = Vector2(884, 272)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8agn"]
-size = Vector2(1957.5, 272)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ovf8"]
-size = Vector2(1165, 272)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ieof3"]
-size = Vector2(1166, 252)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7vfs"]
-size = Vector2(1192.25, 1357)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5t1rp"]
-size = Vector2(1192.25, 1357)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pavw5"]
-size = Vector2(1192.25, 1357)
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_dqiju")
 
 [node name="Layouts" type="Node2D" parent="."]
 
-[node name="BgLayoutPage01" type="Sprite2D" parent="Layouts"]
+[node name="Sprite_background" type="Node2D" parent="Layouts"]
+visible = false
+
+[node name="BgLayoutPage01" type="Sprite2D" parent="Layouts/Sprite_background"]
 position = Vector2(-2, 6)
 scale = Vector2(0.605, 0.605)
 texture = ExtResource("1_fr252")
 
-[node name="BgLayoutPage02" type="Sprite2D" parent="Layouts"]
+[node name="BgLayoutPage02" type="Sprite2D" parent="Layouts/Sprite_background"]
 position = Vector2(1155, 4)
 scale = Vector2(0.605, 0.605)
 texture = ExtResource("2_rfwdo")
 
-[node name="BgLayoutPage03" type="Sprite2D" parent="Layouts"]
+[node name="BgLayoutPage03" type="Sprite2D" parent="Layouts/Sprite_background"]
 position = Vector2(2314, 8)
 scale = Vector2(0.605, 0.605)
 texture = ExtResource("4_fwrbr")
 
-[node name="BgLayoutPage04" type="Sprite2D" parent="Layouts"]
+[node name="BgLayoutPage04" type="Sprite2D" parent="Layouts/Sprite_background"]
 position = Vector2(3469, 486)
 scale = Vector2(0.605, 0.605)
 texture = ExtResource("5_b11rn")
 
-[node name="BgLayoutPage05" type="Sprite2D" parent="Layouts"]
+[node name="BgLayoutPage05" type="Sprite2D" parent="Layouts/Sprite_background"]
 position = Vector2(4626, 488)
 scale = Vector2(0.605, 0.605)
 texture = ExtResource("6_rmdn5")
 
-[node name="BgLayoutPage06" type="Sprite2D" parent="Layouts"]
+[node name="BgLayoutPage06" type="Sprite2D" parent="Layouts/Sprite_background"]
 position = Vector2(5782, 733)
 scale = Vector2(0.605, 0.605)
 texture = ExtResource("7_ppyvg")
 
-[node name="BgLayoutPage07" type="Sprite2D" parent="Layouts"]
+[node name="BgLayoutPage07" type="Sprite2D" parent="Layouts/Sprite_background"]
 position = Vector2(6943, 1096)
 scale = Vector2(0.605, 0.605)
 texture = ExtResource("8_2e7kl")
 
-[node name="BgLayoutPage08" type="Sprite2D" parent="Layouts"]
+[node name="BgLayoutPage08" type="Sprite2D" parent="Layouts/Sprite_background"]
 position = Vector2(8106, 870)
 scale = Vector2(0.605, 0.605)
 texture = ExtResource("9_utpwh")
 
-[node name="BgLayoutPage09" type="Sprite2D" parent="Layouts"]
+[node name="BgLayoutPage09" type="Sprite2D" parent="Layouts/Sprite_background"]
 position = Vector2(9260, 1143)
 scale = Vector2(0.605, 0.605)
 texture = ExtResource("10_4q4v2")
 
-[node name="BgLayoutPage10" type="Sprite2D" parent="Layouts"]
+[node name="BgLayoutPage10" type="Sprite2D" parent="Layouts/Sprite_background"]
 position = Vector2(10426, 1755)
 scale = Vector2(0.605, 0.605)
 texture = ExtResource("11_jp35h")
 
-[node name="BgLayoutPage11" type="Sprite2D" parent="Layouts"]
+[node name="BgLayoutPage11" type="Sprite2D" parent="Layouts/Sprite_background"]
 position = Vector2(10354, 2395)
 scale = Vector2(0.605, 0.605)
 texture = ExtResource("12_qxo6j")
 
-[node name="BgLayoutPage12" type="Sprite2D" parent="Layouts"]
+[node name="BgLayoutPage12" type="Sprite2D" parent="Layouts/Sprite_background"]
 position = Vector2(11515, 2762)
 scale = Vector2(0.605, 0.605)
 texture = ExtResource("13_yyhiw")
 
+[node name="New_background" type="Node2D" parent="Layouts"]
+
+[node name="Background" type="Sprite2D" parent="Layouts/New_background"]
+position = Vector2(8346, 856)
+texture = ExtResource("14_t55iq")
+
 [node name="PlayerTestCharacterBody2D" parent="." instance=ExtResource("2_ru0e0")]
-position = Vector2(-380, 195)
-scale = Vector2(3, 3)
+position = Vector2(-394, 102)
+scale = Vector2(3.5, 3.5)
 
 [node name="CollectedFishControl" type="Control" parent="PlayerTestCharacterBody2D"]
 layout_mode = 3
@@ -237,65 +209,11 @@ position = Vector2(11051, 2893)
 
 [node name="Ground" type="Node2D" parent="."]
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Ground"]
-position = Vector2(574.375, 281.125)
-scale = Vector2(2315.25, 101.75)
-mesh = SubResource("QuadMesh_jbjt8")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
-position = Vector2(483, 274)
+position = Vector2(-582, 206)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2(97, 6)
-shape = SubResource("RectangleShape2D_la17o")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2(1266.5, 2.5)
-shape = SubResource("RectangleShape2D_41sh5")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2(2095, 287)
-shape = SubResource("RectangleShape2D_ngh10")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2(2355, 442)
-shape = SubResource("RectangleShape2D_ngh10")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2(2924.5, 521.5)
-shape = SubResource("RectangleShape2D_e38sh")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2(3660.5, 535)
-shape = SubResource("RectangleShape2D_j5few")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2(4273, 673)
-shape = SubResource("RectangleShape2D_lwnw3")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2(4898, 926)
-shape = SubResource("RectangleShape2D_h8agn")
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2(6458.5, 1283)
-shape = SubResource("RectangleShape2D_8ovf8")
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2(7615, 1207)
-shape = SubResource("RectangleShape2D_ieof3")
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2(8773.88, 1878.5)
-shape = SubResource("RectangleShape2D_y7vfs")
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2(9867, 3098)
-shape = SubResource("RectangleShape2D_5t1rp")
-
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-position = Vector2(11046, 3365)
-shape = SubResource("RectangleShape2D_pavw5")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+polygon = PackedVector2Array(7, -1, 60, 0, 569, 12, 986, 10, 1159, 3, 1733, 14, 2269, 60, 2701, 104, 3107, 97, 3405, 70, 3732, 72, 4022, 156, 4686, 237, 4888, 237, 4986, 263, 5109, 232, 5390, 256, 5487, 348, 5688, 446, 6021, 473, 6586, 468, 7009, 464, 7312, 566, 7640, 569, 8166, 580, 8410, 611, 8429, 736, 8452, 996, 8444, 1084, 8263, 1087, 7742, 1092, 7459, 1169, 7275, 1132, 7168, 1072, 6920, 986, 6523, 959, 6122, 1010, 6053, 1130, 6229, 1237, 6507, 1331, 6683, 1464, 6984, 1493, 7100, 1577, 7366, 1772, 7817, 1816, 8672, 1815, 9990, 1798, 10973, 1836, 11753, 1857, 12718, 1873, 13498, 1873, 14026, 1540, 14963, 1146, 15457, 1066, 15797, 1029, 16118, 779, 16530, 693, 16965, 676, 17182, 665, 17279.2, 723.044, 17273, 77, 14195, 216, 13688, 638, 12889, 1209, 11642, 1461, 10433, 1081, 13058, -542, 17950, -349, 17495, 852, 16865, 3056, -502, 2449, -88, -401, 0, -490)
 
 [connection signal="FlashbackOver" from="PlayerTestCharacterBody2D/Flashbacks" to="PlayerTestCharacterBody2D" method="_on_flashbacks_flashback_over"]
 [connection signal="FlashbackTime" from="PlayerTestCharacterBody2D/Flashbacks" to="PlayerTestCharacterBody2D" method="_on_flashbacks_flashback_time"]
