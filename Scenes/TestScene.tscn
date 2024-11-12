@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://g7xgkwwsalab"]
+[gd_scene load_steps=33 format=3 uid="uid://g7xgkwwsalab"]
 
 [ext_resource type="Script" path="res://Scripts/sceneManager.gd" id="1_dqiju"]
 [ext_resource type="Texture2D" uid="uid://x0u624kbbepl" path="res://layout/BG Layout_Page_01.jpg" id="1_fr252"]
@@ -16,8 +16,21 @@
 [ext_resource type="Texture2D" uid="uid://b1bu3f0pxh4fp" path="res://layout/BG Layout_Page_10.jpg" id="11_jp35h"]
 [ext_resource type="Texture2D" uid="uid://c1e10axbalxe5" path="res://layout/BG Layout_Page_11.jpg" id="12_qxo6j"]
 [ext_resource type="Texture2D" uid="uid://8ela2sxjd1gd" path="res://layout/BG Layout_Page_12.jpg" id="13_yyhiw"]
-[ext_resource type="Texture2D" uid="uid://cc3oufrwl4k4" path="res://layout/Background_.jpg" id="14_t55iq"]
+[ext_resource type="Texture2D" uid="uid://of5stp3vmjoa" path="res://layout/background/Background__1.jpg" id="14_jat1y"]
+[ext_resource type="Texture2D" uid="uid://c2fy23kwoyll7" path="res://layout/background/Background__2.jpg" id="15_fla5m"]
+[ext_resource type="Texture2D" uid="uid://cq0m884kyxnjp" path="res://layout/background/Background__3.jpg" id="16_f1pbb"]
 [ext_resource type="Script" path="res://Scenes/flashbacksManager.gd" id="16_hixwt"]
+[ext_resource type="Texture2D" uid="uid://kaov3lfwnjw8" path="res://layout/background/Background__4.jpg" id="17_4ots1"]
+[ext_resource type="Texture2D" uid="uid://dwdjkfpgwluex" path="res://layout/background/Background__5.jpg" id="18_mo34c"]
+[ext_resource type="Texture2D" uid="uid://dcyvnyu8ru1tr" path="res://layout/background/Background__6.jpg" id="19_pfrib"]
+[ext_resource type="Texture2D" uid="uid://cuad3q35yvcou" path="res://layout/background/Background__7.jpg" id="20_pyg1e"]
+[ext_resource type="Texture2D" uid="uid://c3q4q5s0i5j87" path="res://layout/background/Background__8.jpg" id="21_wxobd"]
+[ext_resource type="Texture2D" uid="uid://bsa7wp6ifqlob" path="res://layout/background/Background__9.jpg" id="22_x1dbr"]
+[ext_resource type="Texture2D" uid="uid://bec4iptmlbxbs" path="res://layout/background/Background__10.jpg" id="23_6he83"]
+[ext_resource type="Texture2D" uid="uid://qxj7pbovfqkp" path="res://layout/background/Background__11.jpg" id="24_mrc11"]
+[ext_resource type="Texture2D" uid="uid://c768u8rrcxm6b" path="res://layout/background/Background__12.jpg" id="25_utbwc"]
+[ext_resource type="Texture2D" uid="uid://c2k38ey0ww812" path="res://layout/background/Background__13.jpg" id="26_yh8ta"]
+[ext_resource type="Texture2D" uid="uid://dmddp2bc8vp8y" path="res://layout/background/Background__14.jpg" id="27_jt5sp"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3unfs"]
 
@@ -91,9 +104,61 @@ texture = ExtResource("13_yyhiw")
 
 [node name="New_background" type="Node2D" parent="Layouts"]
 
-[node name="Background" type="Sprite2D" parent="Layouts/New_background"]
-position = Vector2(8346, 856)
-texture = ExtResource("14_t55iq")
+[node name="Background1" type="Sprite2D" parent="Layouts/New_background"]
+position = Vector2(380, 58)
+texture = ExtResource("14_jat1y")
+
+[node name="Background2" type="Sprite2D" parent="Layouts/New_background"]
+position = Vector2(3035, 58)
+texture = ExtResource("15_fla5m")
+
+[node name="Background3" type="Sprite2D" parent="Layouts/New_background"]
+position = Vector2(5690, 58)
+texture = ExtResource("16_f1pbb")
+
+[node name="Background4" type="Sprite2D" parent="Layouts/New_background"]
+position = Vector2(8345, 58)
+texture = ExtResource("17_4ots1")
+
+[node name="Background5" type="Sprite2D" parent="Layouts/New_background"]
+position = Vector2(11000, 58)
+texture = ExtResource("18_mo34c")
+
+[node name="Background6" type="Sprite2D" parent="Layouts/New_background"]
+position = Vector2(13655, 58)
+texture = ExtResource("19_pfrib")
+
+[node name="Background7" type="Sprite2D" parent="Layouts/New_background"]
+position = Vector2(16310, 58)
+texture = ExtResource("20_pyg1e")
+
+[node name="Background8" type="Sprite2D" parent="Layouts/New_background"]
+position = Vector2(380, 1655)
+texture = ExtResource("21_wxobd")
+
+[node name="Background9" type="Sprite2D" parent="Layouts/New_background"]
+position = Vector2(3035, 1655)
+texture = ExtResource("22_x1dbr")
+
+[node name="Background10" type="Sprite2D" parent="Layouts/New_background"]
+position = Vector2(5690, 1655)
+texture = ExtResource("23_6he83")
+
+[node name="Background11" type="Sprite2D" parent="Layouts/New_background"]
+position = Vector2(8345, 1655)
+texture = ExtResource("24_mrc11")
+
+[node name="Background12" type="Sprite2D" parent="Layouts/New_background"]
+position = Vector2(11000, 1655)
+texture = ExtResource("25_utbwc")
+
+[node name="Background13" type="Sprite2D" parent="Layouts/New_background"]
+position = Vector2(13655, 1655)
+texture = ExtResource("26_yh8ta")
+
+[node name="Background14" type="Sprite2D" parent="Layouts/New_background"]
+position = Vector2(16310, 1655)
+texture = ExtResource("27_jt5sp")
 
 [node name="PlayerTestCharacterBody2D" parent="." instance=ExtResource("2_ru0e0")]
 position = Vector2(-394, 102)
