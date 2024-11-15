@@ -3,8 +3,8 @@ signal Fishcollected()
 @onready var animationFish = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	animationFish.play("Swim") # Replace with function body.
+func _ready():
+	$AnimationPlayer.play("Swim") # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

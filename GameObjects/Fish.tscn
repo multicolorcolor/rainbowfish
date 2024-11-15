@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d2nll4g1yk0gh"]
+[gd_scene load_steps=11 format=3 uid="uid://d2nll4g1yk0gh"]
 
 [ext_resource type="Script" path="res://Scripts/fish_col_control.gd" id="1_5nes6"]
 [ext_resource type="Texture2D" uid="uid://ciuyar23mvdgo" path="res://Placeholder/Fish animation/Ppl1.PNG" id="2_hvry8"]
@@ -12,7 +12,7 @@ height = 64.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_6h88f"]
 
-[sub_resource type="Animation" id="Animation_tft1i"]
+[sub_resource type="Animation" id="Animation_us8et"]
 resource_name = "Swim"
 length = 0.3
 loop_mode = 2
@@ -29,7 +29,7 @@ tracks/0/keys = {
 "values": [ExtResource("2_hvry8"), ExtResource("3_o3aq4"), ExtResource("4_sttid"), ExtResource("5_ewohp")]
 }
 
-[sub_resource type="Animation" id="Animation_3h3xy"]
+[sub_resource type="Animation" id="Animation_d1gts"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -44,13 +44,11 @@ tracks/0/keys = {
 "values": [ExtResource("2_hvry8")]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_17dp7"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hg1ys"]
 _data = {
-"RESET": SubResource("Animation_3h3xy"),
-"Swim": SubResource("Animation_tft1i")
+"RESET": SubResource("Animation_d1gts"),
+"Swim": SubResource("Animation_us8et")
 }
-
-[sub_resource type="AnimationRootNode" id="AnimationRootNode_celji"]
 
 [node name="Fish" type="Node2D"]
 scale = Vector2(2, 2)
@@ -75,11 +73,7 @@ texture = ExtResource("2_hvry8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_17dp7")
+"": SubResource("AnimationLibrary_hg1ys")
 }
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationRootNode_celji")
-anim_player = NodePath("../AnimationPlayer")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
