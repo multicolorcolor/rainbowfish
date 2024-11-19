@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://g7xgkwwsalab"]
+[gd_scene load_steps=41 format=3 uid="uid://g7xgkwwsalab"]
 
 [ext_resource type="Script" path="res://Scripts/sceneManager.gd" id="1_dqiju"]
 [ext_resource type="Texture2D" uid="uid://x0u624kbbepl" path="res://layout/old/BG Layout_Page_01.jpg" id="1_fr252"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://1cyy65752nej" path="res://layout/details/waterlayer.png" id="35_75k71"]
 [ext_resource type="Texture2D" uid="uid://km7nuxhq41sj" path="res://layout/details/waterlayer_part1.png" id="36_rkjx6"]
 [ext_resource type="Texture2D" uid="uid://cc13s34bpgvh7" path="res://layout/details/waterlayer_part2.png" id="37_bcpg3"]
+[ext_resource type="Texture2D" uid="uid://cjudvlvqwpfsh" path="res://layout/details/detail01.png" id="38_3brxp"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3unfs"]
 
@@ -191,6 +192,10 @@ texture = ExtResource("30_7da55")
 position = Vector2(-394, 102)
 scale = Vector2(3.5, 3.5)
 
+[node name="Camera2D" type="Camera2D" parent="PlayerTestCharacterBody2D"]
+position = Vector2(112, -34.5714)
+scale = Vector2(1, 1)
+
 [node name="CollectedFishControl" type="Control" parent="PlayerTestCharacterBody2D"]
 layout_mode = 3
 anchors_preset = 0
@@ -281,9 +286,6 @@ offset_right = 292.667
 offset_bottom = 255.667
 text = "End of the prototype"
 
-[node name="Camera2D" type="Camera2D" parent="PlayerTestCharacterBody2D"]
-position = Vector2(112, -34.5714)
-
 [node name="Fish1" parent="." instance=ExtResource("2_orlob")]
 position = Vector2(2130, 271)
 
@@ -301,8 +303,7 @@ position = Vector2(16504, 714)
 position = Vector2(-582, 206)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
-visible = false
-polygon = PackedVector2Array(7, -1, 60, 0, 569, 12, 986, 10, 1159, 3, 1733, 14, 2269, 60, 2468, 93, 2808, 111, 3157, 94, 3399, 100, 3727, 91, 4022, 156, 4686, 237, 4888, 237, 4986, 263, 5138, 271, 5372, 297, 5487, 348, 5657, 457, 5973, 528, 6583, 501, 6891, 475, 7300, 587, 7631, 614, 8166, 580, 8410, 611, 8429, 736, 8452, 996, 8444, 1084, 8263, 1087, 7742, 1092, 7459, 1169, 7275, 1132, 7168, 1072, 6920, 986, 6523, 959, 6122, 1010, 6121, 1179, 6173, 1210, 6203, 1254, 6379, 1319, 6562, 1378, 6685, 1494, 6831, 1539, 6988, 1599, 7159, 1690, 7317, 1789, 7452, 1831, 7602, 1854, 7726, 1842, 7817, 1816, 8672, 1815, 9990, 1798, 10973, 1836, 11753, 1857, 12718, 1873, 13498, 1873, 14026, 1540, 14963, 1146, 15457, 1066, 15797, 1029, 16118, 779, 16530, 693, 16965, 676, 17182, 665, 17279.2, 723.044, 17273, 77, 14195, 216, 13688, 638, 12889, 1209, 11642, 1461, 10433, 1081, 13058, -542, 17950, -349, 17495, 852, 16865, 3056, -502, 2449, -88, -401, 0, -490)
+polygon = PackedVector2Array(7, -1, 60, 0, 569, 12, 986, 10, 1159, 3, 1733, 14, 2269, 60, 2468, 93, 2808, 111, 3067, 119, 3201, 130, 3401, 130, 3700, 139, 4054, 207, 4634, 275, 4834, 303, 4992, 313, 5134, 331, 5335, 354, 5487, 402, 5657, 457, 5973, 528, 6583, 501, 6891, 475, 7300, 587, 7631, 614, 8166, 580, 8410, 611, 8429, 736, 8452, 996, 8444, 1084, 8263, 1087, 7742, 1092, 7459, 1169, 7275, 1132, 7168, 1072, 6920, 986, 6523, 959, 6122, 1010, 6121, 1179, 6173, 1210, 6203, 1254, 6379, 1319, 6562, 1378, 6685, 1494, 6831, 1539, 6988, 1599, 7159, 1690, 7317, 1789, 7452, 1831, 7602, 1854, 7726, 1842, 7817, 1816, 8672, 1815, 9990, 1798, 10973, 1836, 11753, 1857, 12718, 1873, 13498, 1873, 14026, 1540, 14963, 1146, 15457, 1066, 15797, 1029, 16118, 779, 16530, 693, 16965, 676, 17182, 665, 17279.2, 723.044, 17273, 77, 14195, 216, 13688, 638, 12889, 1209, 11642, 1461, 10433, 1081, 13058, -542, 17950, -349, 17495, 852, 16865, 3056, -502, 2449, -88, -401, 0, -490)
 
 [node name="PathsForFishes" type="Node2D" parent="."]
 
@@ -330,14 +331,28 @@ scale = Vector2(0.673749, 0.673749)
 texture = ExtResource("35_75k71")
 
 [node name="WaterlayerPart1" type="Sprite2D" parent="Foreground_details"]
-position = Vector2(4206.27, 765.03)
+position = Vector2(4215, 758)
 scale = Vector2(0.700189, 0.700189)
 texture = ExtResource("36_rkjx6")
 
 [node name="WaterlayerPart2" type="Sprite2D" parent="Foreground_details"]
 modulate = Color(1, 1, 1, 0.960784)
-position = Vector2(6222, 764.59)
+position = Vector2(6224.47, 755.75)
+scale = Vector2(0.695467, 0.695467)
 texture = ExtResource("37_bcpg3")
+
+[node name="Detail01" type="Sprite2D" parent="Foreground_details"]
+modulate = Color(1, 1, 1, 0.941176)
+position = Vector2(4288.13, 525.75)
+scale = Vector2(0.763288, 0.763288)
+texture = ExtResource("38_3brxp")
+
+[node name="Detail02" type="Sprite2D" parent="Foreground_details"]
+modulate = Color(1, 1, 1, 0.941176)
+position = Vector2(2096.13, 523.75)
+scale = Vector2(0.763288, 0.763288)
+texture = ExtResource("38_3brxp")
+flip_h = true
 
 [connection signal="FlashbackOver" from="PlayerTestCharacterBody2D/Flashbacks" to="PlayerTestCharacterBody2D" method="_on_flashbacks_flashback_over"]
 [connection signal="FlashbackTime" from="PlayerTestCharacterBody2D/Flashbacks" to="PlayerTestCharacterBody2D" method="_on_flashbacks_flashback_time"]
