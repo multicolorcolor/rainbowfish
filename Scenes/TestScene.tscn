@@ -1,21 +1,21 @@
-[gd_scene load_steps=34 format=3 uid="uid://g7xgkwwsalab"]
+[gd_scene load_steps=40 format=3 uid="uid://g7xgkwwsalab"]
 
 [ext_resource type="Script" path="res://Scripts/sceneManager.gd" id="1_dqiju"]
-[ext_resource type="Texture2D" uid="uid://x0u624kbbepl" path="res://layout/BG Layout_Page_01.jpg" id="1_fr252"]
+[ext_resource type="Texture2D" uid="uid://x0u624kbbepl" path="res://layout/old/BG Layout_Page_01.jpg" id="1_fr252"]
 [ext_resource type="PackedScene" uid="uid://d2nll4g1yk0gh" path="res://GameObjects/Fish.tscn" id="2_orlob"]
-[ext_resource type="Texture2D" uid="uid://c4be6yrd0v51s" path="res://layout/BG Layout_Page_02.jpg" id="2_rfwdo"]
+[ext_resource type="Texture2D" uid="uid://c4be6yrd0v51s" path="res://layout/old/BG Layout_Page_02.jpg" id="2_rfwdo"]
 [ext_resource type="PackedScene" uid="uid://crg7a068vheai" path="res://GameObjects/PlayerTest.tscn" id="2_ru0e0"]
 [ext_resource type="Script" path="res://Scripts/FishScore.gd" id="3_yt2u6"]
-[ext_resource type="Texture2D" uid="uid://bttmkteh81kyw" path="res://layout/BG Layout_Page_03.jpg" id="4_fwrbr"]
-[ext_resource type="Texture2D" uid="uid://bvxvh2tq8dvck" path="res://layout/BG Layout_Page_04.jpg" id="5_b11rn"]
-[ext_resource type="Texture2D" uid="uid://bv4i1ibgiowlk" path="res://layout/BG Layout_Page_05.jpg" id="6_rmdn5"]
-[ext_resource type="Texture2D" uid="uid://7lqjjouyarr8" path="res://layout/BG Layout_Page_06.jpg" id="7_ppyvg"]
-[ext_resource type="Texture2D" uid="uid://cnjdgc2dgxlt4" path="res://layout/BG Layout_Page_07.jpg" id="8_2e7kl"]
-[ext_resource type="Texture2D" uid="uid://dyp5lj5knqexv" path="res://layout/BG Layout_Page_08.jpg" id="9_utpwh"]
-[ext_resource type="Texture2D" uid="uid://h5ywgrb5fxrq" path="res://layout/BG Layout_Page_09.jpg" id="10_4q4v2"]
-[ext_resource type="Texture2D" uid="uid://b1bu3f0pxh4fp" path="res://layout/BG Layout_Page_10.jpg" id="11_jp35h"]
-[ext_resource type="Texture2D" uid="uid://c1e10axbalxe5" path="res://layout/BG Layout_Page_11.jpg" id="12_qxo6j"]
-[ext_resource type="Texture2D" uid="uid://8ela2sxjd1gd" path="res://layout/BG Layout_Page_12.jpg" id="13_yyhiw"]
+[ext_resource type="Texture2D" uid="uid://bttmkteh81kyw" path="res://layout/old/BG Layout_Page_03.jpg" id="4_fwrbr"]
+[ext_resource type="Texture2D" uid="uid://bvxvh2tq8dvck" path="res://layout/old/BG Layout_Page_04.jpg" id="5_b11rn"]
+[ext_resource type="Texture2D" uid="uid://bv4i1ibgiowlk" path="res://layout/old/BG Layout_Page_05.jpg" id="6_rmdn5"]
+[ext_resource type="Texture2D" uid="uid://7lqjjouyarr8" path="res://layout/old/BG Layout_Page_06.jpg" id="7_ppyvg"]
+[ext_resource type="Texture2D" uid="uid://cnjdgc2dgxlt4" path="res://layout/old/BG Layout_Page_07.jpg" id="8_2e7kl"]
+[ext_resource type="Texture2D" uid="uid://dyp5lj5knqexv" path="res://layout/old/BG Layout_Page_08.jpg" id="9_utpwh"]
+[ext_resource type="Texture2D" uid="uid://h5ywgrb5fxrq" path="res://layout/old/BG Layout_Page_09.jpg" id="10_4q4v2"]
+[ext_resource type="Texture2D" uid="uid://b1bu3f0pxh4fp" path="res://layout/old/BG Layout_Page_10.jpg" id="11_jp35h"]
+[ext_resource type="Texture2D" uid="uid://c1e10axbalxe5" path="res://layout/old/BG Layout_Page_11.jpg" id="12_qxo6j"]
+[ext_resource type="Texture2D" uid="uid://8ela2sxjd1gd" path="res://layout/old/BG Layout_Page_12.jpg" id="13_yyhiw"]
 [ext_resource type="Texture2D" uid="uid://of5stp3vmjoa" path="res://layout/background/Background__1.jpg" id="14_jat1y"]
 [ext_resource type="Texture2D" uid="uid://c2fy23kwoyll7" path="res://layout/background/Background__2.jpg" id="15_fla5m"]
 [ext_resource type="Texture2D" uid="uid://cq0m884kyxnjp" path="res://layout/background/Background__3.jpg" id="16_f1pbb"]
@@ -31,6 +31,12 @@
 [ext_resource type="Texture2D" uid="uid://c768u8rrcxm6b" path="res://layout/background/Background__12.jpg" id="25_utbwc"]
 [ext_resource type="Texture2D" uid="uid://c2k38ey0ww812" path="res://layout/background/Background__13.jpg" id="26_yh8ta"]
 [ext_resource type="Texture2D" uid="uid://dmddp2bc8vp8y" path="res://layout/background/Background__14.jpg" id="27_jt5sp"]
+[ext_resource type="Texture2D" uid="uid://c6qvcmvi3j7ct" path="res://layout/background/BG/BG1.jpg" id="28_4x760"]
+[ext_resource type="Texture2D" uid="uid://yy535q7hb31v" path="res://layout/background/BG/BG2.jpg" id="29_xb2w4"]
+[ext_resource type="Texture2D" uid="uid://ca5n4klgeooqa" path="res://layout/background/BG/BG0.jpg" id="30_7da55"]
+[ext_resource type="Texture2D" uid="uid://1cyy65752nej" path="res://layout/details/waterlayer.png" id="35_75k71"]
+[ext_resource type="Texture2D" uid="uid://km7nuxhq41sj" path="res://layout/details/waterlayer_part1.png" id="36_rkjx6"]
+[ext_resource type="Texture2D" uid="uid://cc13s34bpgvh7" path="res://layout/details/waterlayer_part2.png" id="37_bcpg3"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3unfs"]
 
@@ -166,6 +172,21 @@ texture = ExtResource("26_yh8ta")
 position = Vector2(16310, 1655)
 texture = ExtResource("27_jt5sp")
 
+[node name="Bg1" type="Sprite2D" parent="Layouts"]
+position = Vector2(4217, 255)
+scale = Vector2(0.669442, 0.669442)
+texture = ExtResource("28_4x760")
+
+[node name="Bg2" type="Sprite2D" parent="Layouts"]
+position = Vector2(6175.78, 1111.85)
+scale = Vector2(0.690884, 0.690884)
+texture = ExtResource("29_xb2w4")
+
+[node name="Bg0" type="Sprite2D" parent="Layouts"]
+position = Vector2(2287, -130)
+scale = Vector2(0.771912, 0.771912)
+texture = ExtResource("30_7da55")
+
 [node name="PlayerTestCharacterBody2D" parent="." instance=ExtResource("2_ru0e0")]
 position = Vector2(-394, 102)
 scale = Vector2(3.5, 3.5)
@@ -280,7 +301,8 @@ position = Vector2(16504, 714)
 position = Vector2(-582, 206)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
-polygon = PackedVector2Array(7, -1, 60, 0, 569, 12, 986, 10, 1159, 3, 1733, 14, 2269, 60, 2701, 104, 3107, 97, 3405, 70, 3732, 72, 4022, 156, 4686, 237, 4888, 237, 4986, 263, 5109, 232, 5390, 256, 5487, 348, 5688, 446, 6021, 473, 6586, 468, 7009, 464, 7312, 566, 7640, 569, 8166, 580, 8410, 611, 8429, 736, 8452, 996, 8444, 1084, 8263, 1087, 7742, 1092, 7459, 1169, 7275, 1132, 7168, 1072, 6920, 986, 6523, 959, 6122, 1010, 6053, 1130, 6229, 1237, 6507, 1331, 6683, 1464, 6984, 1493, 7100, 1577, 7366, 1772, 7817, 1816, 8672, 1815, 9990, 1798, 10973, 1836, 11753, 1857, 12718, 1873, 13498, 1873, 14026, 1540, 14963, 1146, 15457, 1066, 15797, 1029, 16118, 779, 16530, 693, 16965, 676, 17182, 665, 17279.2, 723.044, 17273, 77, 14195, 216, 13688, 638, 12889, 1209, 11642, 1461, 10433, 1081, 13058, -542, 17950, -349, 17495, 852, 16865, 3056, -502, 2449, -88, -401, 0, -490)
+visible = false
+polygon = PackedVector2Array(7, -1, 60, 0, 569, 12, 986, 10, 1159, 3, 1733, 14, 2269, 60, 2468, 93, 2808, 111, 3157, 94, 3399, 100, 3727, 91, 4022, 156, 4686, 237, 4888, 237, 4986, 263, 5138, 271, 5372, 297, 5487, 348, 5657, 457, 5973, 528, 6583, 501, 6891, 475, 7300, 587, 7631, 614, 8166, 580, 8410, 611, 8429, 736, 8452, 996, 8444, 1084, 8263, 1087, 7742, 1092, 7459, 1169, 7275, 1132, 7168, 1072, 6920, 986, 6523, 959, 6122, 1010, 6121, 1179, 6173, 1210, 6203, 1254, 6379, 1319, 6562, 1378, 6685, 1494, 6831, 1539, 6988, 1599, 7159, 1690, 7317, 1789, 7452, 1831, 7602, 1854, 7726, 1842, 7817, 1816, 8672, 1815, 9990, 1798, 10973, 1836, 11753, 1857, 12718, 1873, 13498, 1873, 14026, 1540, 14963, 1146, 15457, 1066, 15797, 1029, 16118, 779, 16530, 693, 16965, 676, 17182, 665, 17279.2, 723.044, 17273, 77, 14195, 216, 13688, 638, 12889, 1209, 11642, 1461, 10433, 1081, 13058, -542, 17950, -349, 17495, 852, 16865, 3056, -502, 2449, -88, -401, 0, -490)
 
 [node name="PathsForFishes" type="Node2D" parent="."]
 
@@ -297,6 +319,25 @@ rotates = false
 modulate = Color(0.759312, 0.402, 0, 1)
 position = Vector2(0.0844727, 1.9982)
 rotation = -0.042238
+
+[node name="Foreground_details" type="Node2D" parent="."]
+
+[node name="Waterlayer" type="Sprite2D" parent="Foreground_details"]
+visible = false
+modulate = Color(1, 1, 1, 0.717647)
+position = Vector2(4221, 672)
+scale = Vector2(0.673749, 0.673749)
+texture = ExtResource("35_75k71")
+
+[node name="WaterlayerPart1" type="Sprite2D" parent="Foreground_details"]
+position = Vector2(4206.27, 765.03)
+scale = Vector2(0.700189, 0.700189)
+texture = ExtResource("36_rkjx6")
+
+[node name="WaterlayerPart2" type="Sprite2D" parent="Foreground_details"]
+modulate = Color(1, 1, 1, 0.960784)
+position = Vector2(6222, 764.59)
+texture = ExtResource("37_bcpg3")
 
 [connection signal="FlashbackOver" from="PlayerTestCharacterBody2D/Flashbacks" to="PlayerTestCharacterBody2D" method="_on_flashbacks_flashback_over"]
 [connection signal="FlashbackTime" from="PlayerTestCharacterBody2D/Flashbacks" to="PlayerTestCharacterBody2D" method="_on_flashbacks_flashback_time"]
