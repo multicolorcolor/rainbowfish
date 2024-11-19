@@ -3,6 +3,10 @@ extends Control
 @onready var flashback2 = $Flashback2
 @onready var flashback3 = $Flashback3
 @onready var flashback4 = $Flashback4
+@onready var anim = $TransitionAnimations
+@onready var video1 = $Flashback1/Video
+@onready var video_idle = $Flashback1/videoIdle
+var flashback1IsPlaying = false
 signal FlashbackTime
 signal FlashbackOver
 
@@ -14,8 +18,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("ui_accept") and SignalBus.fish == 1:
-		flashback1.visible = false
+	if Input.is_action_pressed("ui_accept") and SignalBus.fish == 1 and flashback1IsPlaying == true:
+		#await get_tree().create_timer(1).timeout
+		anim.play("video1Out")
+		anim.play("fadeOut")
+		#flashback1.visible = false
+		flashback1IsPlaying = false
 		emit_signal("FlashbackOver")
 	if Input.is_action_pressed("ui_accept") and SignalBus.fish == 2:
 		flashback2.visible = false
@@ -29,8 +37,15 @@ func _process(delta: float) -> void:
 
 
 func _on_fish_1_fishcollected() -> void:
-	flashback1.visible = true
+	flashback1IsPlaying = true
 	emit_signal("FlashbackTime")
+	anim.play("fadeToWhite")
+	await get_tree().create_timer(1).timeout
+	flashback1.visible = true
+	video1.play()
+	await get_tree().create_timer(12).timeout
+	video_idle.play()
+	
 
 
 func _on_fish_2_fishcollected() -> void:

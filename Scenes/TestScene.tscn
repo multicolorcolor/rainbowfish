@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://g7xgkwwsalab"]
+[gd_scene load_steps=50 format=3 uid="uid://g7xgkwwsalab"]
 
 [ext_resource type="Script" path="res://Scripts/sceneManager.gd" id="1_dqiju"]
 [ext_resource type="Texture2D" uid="uid://x0u624kbbepl" path="res://layout/old/BG Layout_Page_01.jpg" id="1_fr252"]
@@ -34,12 +34,122 @@
 [ext_resource type="Texture2D" uid="uid://c6qvcmvi3j7ct" path="res://layout/background/BG/BG1.jpg" id="28_4x760"]
 [ext_resource type="Texture2D" uid="uid://yy535q7hb31v" path="res://layout/background/BG/BG2.jpg" id="29_xb2w4"]
 [ext_resource type="Texture2D" uid="uid://ca5n4klgeooqa" path="res://layout/background/BG/BG0.jpg" id="30_7da55"]
+[ext_resource type="VideoStream" path="res://video/0001-0300.ogv" id="34_hg1qd"]
 [ext_resource type="Texture2D" uid="uid://1cyy65752nej" path="res://layout/details/waterlayer.png" id="35_75k71"]
+[ext_resource type="VideoStream" path="res://video/flashback1_idle.ogv" id="35_yh0bu"]
 [ext_resource type="Texture2D" uid="uid://km7nuxhq41sj" path="res://layout/details/waterlayer_part1.png" id="36_rkjx6"]
 [ext_resource type="Texture2D" uid="uid://cc13s34bpgvh7" path="res://layout/details/waterlayer_part2.png" id="37_bcpg3"]
 [ext_resource type="Texture2D" uid="uid://cjudvlvqwpfsh" path="res://layout/details/detail01.png" id="38_3brxp"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_w27kf"]
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3unfs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wnly5"]
+
+[sub_resource type="Animation" id="Animation_mfx1o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fadeToWhite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flashback1/Video:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Flashback1/videoIdle:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ensj8"]
+resource_name = "fadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fadeToWhite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xbt04"]
+resource_name = "fadeToWhite"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fadeToWhite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5bld5"]
+resource_name = "video1Out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flashback1/Video:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flashback1/videoIdle:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ex3bo"]
+_data = {
+"RESET": SubResource("Animation_mfx1o"),
+"fadeOut": SubResource("Animation_ensj8"),
+"fadeToWhite": SubResource("Animation_xbt04"),
+"video1Out": SubResource("Animation_5bld5")
+}
 
 [sub_resource type="Curve2D" id="Curve2D_g3ntp"]
 _data = {
@@ -215,28 +325,63 @@ script = ExtResource("3_yt2u6")
 [node name="Flashbacks" type="Control" parent="PlayerTestCharacterBody2D"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -29.4286
-offset_top = -112.571
-offset_right = 353.571
-offset_bottom = 103.428
+offset_left = -53.05
+offset_top = -137.305
+offset_right = -53.05
+offset_bottom = -137.305
 scale = Vector2(0.857074, 0.862739)
 script = ExtResource("16_hixwt")
+
+[node name="fadeToWhite" type="MeshInstance2D" parent="PlayerTestCharacterBody2D/Flashbacks"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(195.016, 113.189)
+scale = Vector2(388.031, 231.014)
+mesh = SubResource("BoxMesh_w27kf")
 
 [node name="Flashback1" type="Panel" parent="PlayerTestCharacterBody2D/Flashbacks"]
 visible = false
 material = SubResource("CanvasItemMaterial_3unfs")
-layout_mode = 0
+layout_mode = 1
 offset_right = 385.0
 offset_bottom = 220.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wnly5")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback1"]
+[node name="Video" type="VideoStreamPlayer" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback1"]
+layout_mode = 2
+offset_left = -0.441706
+offset_top = 11.1166
+offset_right = 1919.56
+offset_bottom = 1099.12
+scale = Vector2(0.202, 0.202)
+stream = ExtResource("34_hg1qd")
+
+[node name="videoIdle" type="VideoStreamPlayer" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback1"]
 layout_mode = 0
-offset_left = 97.6667
-offset_top = 86.6667
-offset_right = 292.667
-offset_bottom = 255.667
-text = "Flashback 1
-Press Space to continue"
+offset_left = -0.441711
+offset_top = 11.1166
+offset_right = 1919.56
+offset_bottom = 1099.12
+scale = Vector2(0.202, 0.202)
+stream = ExtResource("35_yh0bu")
+loop = true
+
+[node name="Text" type="RichTextLabel" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback1"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.9306
+offset_top = 87.5659
+offset_right = 264.069
+offset_bottom = 256.566
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.355, 0.355)
+theme_override_font_sizes/normal_font_size = 34
+text = "Press Space to skip"
 
 [node name="Flashback2" type="Panel" parent="PlayerTestCharacterBody2D/Flashbacks"]
 visible = false
@@ -284,6 +429,11 @@ offset_top = 86.6667
 offset_right = 292.667
 offset_bottom = 255.667
 text = "End of the prototype"
+
+[node name="TransitionAnimations" type="AnimationPlayer" parent="PlayerTestCharacterBody2D/Flashbacks"]
+libraries = {
+"": SubResource("AnimationLibrary_ex3bo")
+}
 
 [node name="Fish1" parent="." instance=ExtResource("2_orlob")]
 position = Vector2(2130, 271)
