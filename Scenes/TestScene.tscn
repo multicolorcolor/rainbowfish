@@ -194,7 +194,6 @@ scale = Vector2(3.5, 3.5)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerTestCharacterBody2D"]
 position = Vector2(112, -34.5714)
-scale = Vector2(1, 1)
 
 [node name="CollectedFishControl" type="Control" parent="PlayerTestCharacterBody2D"]
 layout_mode = 3

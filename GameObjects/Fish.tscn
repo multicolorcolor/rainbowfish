@@ -12,6 +12,21 @@ height = 64.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_6h88f"]
 
+[sub_resource type="Animation" id="Animation_d1gts"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_hvry8")]
+}
+
 [sub_resource type="Animation" id="Animation_us8et"]
 resource_name = "Swim"
 length = 0.3
@@ -27,21 +42,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("2_hvry8"), ExtResource("3_o3aq4"), ExtResource("4_sttid"), ExtResource("5_ewohp")]
-}
-
-[sub_resource type="Animation" id="Animation_d1gts"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_hvry8")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hg1ys"]
