@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://g7xgkwwsalab"]
+[gd_scene load_steps=56 format=3 uid="uid://g7xgkwwsalab"]
 
 [ext_resource type="Script" path="res://Scripts/sceneManager.gd" id="1_dqiju"]
 [ext_resource type="Texture2D" uid="uid://x0u624kbbepl" path="res://layout/old/BG Layout_Page_01.jpg" id="1_fr252"]
@@ -34,12 +34,15 @@
 [ext_resource type="Texture2D" uid="uid://c6qvcmvi3j7ct" path="res://layout/background/BG/BG1.jpg" id="28_4x760"]
 [ext_resource type="Texture2D" uid="uid://yy535q7hb31v" path="res://layout/background/BG/BG2.jpg" id="29_xb2w4"]
 [ext_resource type="Texture2D" uid="uid://ca5n4klgeooqa" path="res://layout/background/BG/BG0.jpg" id="30_7da55"]
+[ext_resource type="Texture2D" uid="uid://buq71m5iuydpf" path="res://layout/details/BG3.jpg" id="31_v7cd6"]
 [ext_resource type="VideoStream" path="res://video/0001-0300.ogv" id="34_hg1qd"]
 [ext_resource type="Texture2D" uid="uid://1cyy65752nej" path="res://layout/details/waterlayer.png" id="35_75k71"]
 [ext_resource type="VideoStream" path="res://video/flashback1_idle.ogv" id="35_yh0bu"]
 [ext_resource type="Texture2D" uid="uid://km7nuxhq41sj" path="res://layout/details/waterlayer_part1.png" id="36_rkjx6"]
 [ext_resource type="Texture2D" uid="uid://cc13s34bpgvh7" path="res://layout/details/waterlayer_part2.png" id="37_bcpg3"]
 [ext_resource type="Texture2D" uid="uid://cjudvlvqwpfsh" path="res://layout/details/detail01.png" id="38_3brxp"]
+[ext_resource type="Texture2D" uid="uid://cwtmw4b80t87r" path="res://layout/details/waterfall.png" id="41_65d1s"]
+[ext_resource type="Texture2D" uid="uid://da0mp0uqkya0t" path="res://layout/details/reef.png" id="43_2e1a1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w27kf"]
 
@@ -151,16 +154,172 @@ _data = {
 "video1Out": SubResource("Animation_5bld5")
 }
 
-[sub_resource type="Curve2D" id="Curve2D_g3ntp"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 247, -115, 0, 0, 0, 0, 1714, -53, 0, 0, 0, 0, 2239, 136, 0, 0, 0, 0, 3228, 83, 0, 0, 0, 0, 3990, 115, 0, 0, 0, 0, 4286, 261, 0, 0, 0, 0, 3666, 453, 0, 0, 0, 0, 2065, 327, 0, 0, 0, 0, 1347, 155, 0, 0, 0, 0, 858, 102, 0, 0, 0, 0, 15, -14)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwixm"]
+size = Vector2(558, 2152)
+
+[sub_resource type="Animation" id="Animation_a2u4u"]
+resource_name = "fishes_swimming_without_care_in_the_world"
+length = 60.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fish2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.1, 5.03333, 8.4, 10.3333, 11.3667, 12.7667, 15.8, 19.2667, 23.5333, 27.7333, 31.7667, 35.5667, 39.2667, 43.6, 48.0333, 52.4333, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(3813, 318), Vector2(3450, 209), Vector2(3208, 208), Vector2(3608, 331), Vector2(3935, 423), Vector2(4095, 398), Vector2(4286, 430), Vector2(4772, 586), Vector2(5382, 624), Vector2(5915, 557), Vector2(6761, 612), Vector2(7525, 618), Vector2(6952, 487), Vector2(6588, 386), Vector2(5973, 404), Vector2(5386, 396), Vector2(4726, 400), Vector2(3813, 318)]
 }
-point_count = 11
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fish2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.46667, 3.1, 4.33333, 6.16667, 6.9, 8.4, 9.96667, 10.6, 11.6, 12.1667, 12.9, 13.7333, 15.6667, 17.9667, 21.2, 24.2333, 26.9, 28.4, 30.6, 32.7333, 33.3667, 35.7667, 38.1667, 39.8333, 41.4, 43.1333, 45.3333, 48.6667, 50.8, 52.7333, 57.1333, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.176278, 0.176278, -0.00349066, 0.350811, 0.169297, -0.0122173, 0.518363, 0.15708, 0.507891, -0.205949, 0.506145, 0.143117, 0.314159, 0.122173, -0.0628319, 0.296706, 0.450295, -0.101229, 0.260054, -0.289725, 0.247837, 0.0488692, 0.219911, 0.0261799, 0.202458, 0.18326, -0.195477, -0.151844, 0.406662, 0.0506145, 0.3735, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fish2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5.03333, 5.63333, 31.7667, 32.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(-2, 2), Vector2(-2, 2), Vector2(2, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fish3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.66667, 3.86667, 4.975, 7.7, 9.66667, 11.7333, 15, 17.6, 18.8, 19.9083, 22.6333, 24.6, 26.6667, 29.9333, 32.4667, 33.6667, 34.775, 37.5, 39.4667, 41.5333, 44.8, 47.4333, 48.6333, 49.7417, 52.4667, 54.4333, 56.5, 59.7667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(5822, 1400), Vector2(6044, 1454), Vector2(6151, 1375), Vector2(6253, 1275), Vector2(6173, 1157), Vector2(6045, 1137), Vector2(5875, 1184), Vector2(5822, 1400), Vector2(6044, 1454), Vector2(6151, 1375), Vector2(6253, 1275), Vector2(6173, 1157), Vector2(6045, 1137), Vector2(5875, 1184), Vector2(5822, 1400), Vector2(6044, 1454), Vector2(6151, 1375), Vector2(6253, 1275), Vector2(6173, 1157), Vector2(6045, 1137), Vector2(5875, 1184), Vector2(5822, 1400), Vector2(6044, 1454), Vector2(6151, 1375), Vector2(6253, 1275), Vector2(6173, 1157), Vector2(6045, 1137), Vector2(5875, 1184), Vector2(5822, 1400)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fish3:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 1.23333, 2.7, 3.96667, 5, 6.73333, 7.86667, 9.1, 9.83333, 10.9, 12.1333, 13.3, 14.9333, 16.1667, 17.6333, 18.9, 19.9333, 21.6667, 22.8, 24.0333, 24.7667, 25.8333, 27.0667, 28.2333, 29.8667, 31.0333, 32.5, 33.7667, 34.8, 36.5333, 37.6667, 38.9, 39.6333, 40.7, 41.9333, 43.1, 44.7333, 46, 47.4667, 48.7333, 49.7667, 51.5, 52.6333, 53.8667, 54.6, 55.6667, 56.9, 58.0667, 59.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.176278, 0.00174533, -0.352556, -0.165806, 0.368264, -0.167552, -0.340339, 0.0191986, 0.0191986, -0.689405, -0.499164, 0.0, -0.176278, 0.00174533, -0.352556, -0.165806, 0.368264, -0.167552, -0.340339, 0.0191986, 0.0191986, -0.689405, -0.499164, 0.0, -0.176278, 0.00174533, -0.352556, -0.165806, 0.368264, -0.167552, -0.340339, 0.0191986, 0.0191986, -0.689405, -0.499164, 0.0, -0.176278, 0.00174533, -0.352556, -0.165806, 0.368264, -0.167552, -0.340339, 0.0191986, 0.0191986, -0.689405, -0.499164, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Fish3:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.566667, 5.13333, 5.7, 14.9333, 15.5, 20.0667, 20.6333, 29.8667, 30.3667, 34.9333, 35.5, 44.7333, 45.3333, 49.9, 50.4667, 59.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(-2, 2), Vector2(-1.70836, 2), Vector2(2, 2), Vector2(2, 2), Vector2(-2, 2), Vector2(-1.70836, 2), Vector2(2, 2), Vector2(2, 2), Vector2(-2, 2), Vector2(-1.70836, 2), Vector2(2, 2), Vector2(2, 2), Vector2(-2, 2), Vector2(-1.70836, 2), Vector2(2, 2), Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_24smq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fish2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3813, 318)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fish2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fish2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fish3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5822, 1400)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fish3:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Fish3:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mfpi8"]
+_data = {
+"RESET": SubResource("Animation_24smq"),
+"fishes_swimming_without_care_in_the_world": SubResource("Animation_a2u4u")
+}
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_dqiju")
 
 [node name="Layouts" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Sprite_background" type="Node2D" parent="Layouts"]
 visible = false
@@ -298,12 +457,25 @@ position = Vector2(2287, -130)
 scale = Vector2(0.771912, 0.771912)
 texture = ExtResource("30_7da55")
 
+[node name="Bg3" type="Sprite2D" parent="Layouts"]
+position = Vector2(8148.16, 1214.7)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("31_v7cd6")
+
+[node name="Bg4" type="Sprite2D" parent="Layouts"]
+position = Vector2(10099.2, 1209.7)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("31_v7cd6")
+flip_h = true
+
 [node name="PlayerTestCharacterBody2D" parent="." instance=ExtResource("2_ru0e0")]
 position = Vector2(-394, 102)
 scale = Vector2(3.5, 3.5)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerTestCharacterBody2D"]
 position = Vector2(112, -34.5714)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PlayerTestCharacterBody2D"]
 
 [node name="CollectedFishControl" type="Control" parent="PlayerTestCharacterBody2D"]
 layout_mode = 3
@@ -435,40 +607,19 @@ libraries = {
 "": SubResource("AnimationLibrary_ex3bo")
 }
 
-[node name="Fish1" parent="." instance=ExtResource("2_orlob")]
-position = Vector2(2130, 271)
-
-[node name="Fish3" parent="." instance=ExtResource("2_orlob")]
-modulate = Color(1, 0.797057, 0.244597, 1)
-position = Vector2(5822, 1400)
-
-[node name="Fish4" parent="." instance=ExtResource("2_orlob")]
-modulate = Color(0.274287, 0.643954, 0, 1)
-position = Vector2(16504, 714)
-
 [node name="Ground" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
 position = Vector2(-582, 206)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+visible = false
 polygon = PackedVector2Array(7, -1, 60, 0, 569, 12, 986, 10, 1159, 3, 1733, 14, 2269, 60, 2468, 93, 2808, 111, 3067, 119, 3201, 130, 3401, 130, 3700, 139, 4054, 207, 4634, 275, 4834, 303, 4992, 313, 5134, 331, 5335, 354, 5487, 402, 5657, 457, 5973, 528, 6583, 501, 6891, 475, 7300, 587, 7631, 614, 8166, 580, 8410, 611, 8429, 736, 8452, 996, 8444, 1084, 8263, 1087, 7742, 1092, 7459, 1169, 7275, 1132, 7168, 1072, 6920, 986, 6523, 959, 6122, 1010, 6121, 1179, 6173, 1210, 6203, 1254, 6379, 1319, 6562, 1378, 6685, 1494, 6831, 1539, 6988, 1599, 7159, 1690, 7317, 1789, 7452, 1831, 7602, 1854, 7726, 1842, 7817, 1816, 8672, 1815, 9990, 1798, 10973, 1836, 11753, 1857, 12718, 1873, 13498, 1873, 14026, 1540, 14963, 1146, 15457, 1066, 15797, 1029, 16118, 779, 16530, 693, 16965, 676, 17182, 665, 17279.2, 723.044, 17273, 77, 14195, 216, 13688, 638, 12889, 1209, 11642, 1461, 10433, 1081, 13058, -542, 17950, -349, 17495, 852, 16865, 3056, -502, 2449, -88, -401, 0, -490)
 
-[node name="PathsForFishes" type="Node2D" parent="."]
-
-[node name="PathFish2" type="Path2D" parent="PathsForFishes"]
-position = Vector2(3453, 262)
-curve = SubResource("Curve2D_g3ntp")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="PathsForFishes/PathFish2"]
-position = Vector2(247, -115)
-rotation = 0.042238
-rotates = false
-
-[node name="Fish2" parent="PathsForFishes/PathFish2/PathFollow2D" instance=ExtResource("2_orlob")]
-modulate = Color(0.759312, 0.402, 0, 1)
-position = Vector2(0.0844727, 1.9982)
-rotation = -0.042238
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+visible = false
+position = Vector2(9958, 1119)
+shape = SubResource("RectangleShape2D_uwixm")
 
 [node name="Foreground_details" type="Node2D" parent="."]
 
@@ -490,22 +641,62 @@ position = Vector2(6224.47, 755.75)
 scale = Vector2(0.695467, 0.695467)
 texture = ExtResource("37_bcpg3")
 
-[node name="Detail01" type="Sprite2D" parent="Foreground_details"]
+[node name="Fishes" type="Node2D" parent="."]
+position = Vector2(1, 41)
+
+[node name="Fish1" parent="Fishes" instance=ExtResource("2_orlob")]
+position = Vector2(2130, 271)
+
+[node name="Fish2" parent="Fishes" instance=ExtResource("2_orlob")]
+modulate = Color(0.759312, 0.402, 0, 1)
+position = Vector2(3813, 318)
+
+[node name="Fish3" parent="Fishes" instance=ExtResource("2_orlob")]
+modulate = Color(1, 0.797057, 0.244597, 1)
+position = Vector2(5822, 1400)
+
+[node name="Fish4" parent="Fishes" instance=ExtResource("2_orlob")]
+modulate = Color(0.274287, 0.643954, 0, 1)
+position = Vector2(16504, 714)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fishes"]
+libraries = {
+"": SubResource("AnimationLibrary_mfpi8")
+}
+
+[node name="Foreground_details2" type="Node2D" parent="."]
+
+[node name="Waterfall" type="Sprite2D" parent="Foreground_details2"]
+position = Vector2(8158, 1424)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("41_65d1s")
+
+[node name="Detail01" type="Sprite2D" parent="Foreground_details2"]
 modulate = Color(1, 1, 1, 0.941176)
 position = Vector2(4288.13, 525.75)
 scale = Vector2(0.763288, 0.763288)
 texture = ExtResource("38_3brxp")
 
-[node name="Detail02" type="Sprite2D" parent="Foreground_details"]
+[node name="Detail02" type="Sprite2D" parent="Foreground_details2"]
 modulate = Color(1, 1, 1, 0.941176)
-position = Vector2(2096.13, 523.75)
+position = Vector2(2196, 466)
 scale = Vector2(0.763288, 0.763288)
 texture = ExtResource("38_3brxp")
 flip_h = true
 
+[node name="Reef" type="Sprite2D" parent="Foreground_details2"]
+position = Vector2(7721, 2127)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("43_2e1a1")
+
+[node name="Reef2" type="Sprite2D" parent="Foreground_details2"]
+position = Vector2(10465, 1586)
+scale = Vector2(1.965, 1.965)
+texture = ExtResource("43_2e1a1")
+
 [connection signal="FlashbackOver" from="PlayerTestCharacterBody2D/Flashbacks" to="PlayerTestCharacterBody2D" method="_on_flashbacks_flashback_over"]
 [connection signal="FlashbackTime" from="PlayerTestCharacterBody2D/Flashbacks" to="PlayerTestCharacterBody2D" method="_on_flashbacks_flashback_time"]
-[connection signal="Fishcollected" from="Fish1" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_1_fishcollected"]
-[connection signal="Fishcollected" from="Fish3" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_3_fishcollected"]
-[connection signal="Fishcollected" from="Fish4" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_4_fishcollected"]
-[connection signal="Fishcollected" from="PathsForFishes/PathFish2/PathFollow2D/Fish2" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_2_fishcollected"]
+[connection signal="Fishcollected" from="Fishes/Fish1" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_1_fishcollected"]
+[connection signal="Fishcollected" from="Fishes/Fish2" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_2_fishcollected"]
+[connection signal="Fishcollected" from="Fishes/Fish3" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_3_fishcollected"]
+[connection signal="Fishcollected" from="Fishes/Fish4" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_4_fishcollected"]
