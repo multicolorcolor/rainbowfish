@@ -19,17 +19,19 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_accept") and SignalBus.fish == 1 and flashback1IsPlaying == true:
-		#await get_tree().create_timer(1).timeout
 		anim.play("video1Out")
 		anim.play("fadeOut")
-		#flashback1.visible = false
 		flashback1IsPlaying = false
 		emit_signal("FlashbackOver")
-	if Input.is_action_pressed("ui_accept") and SignalBus.fish == 2:
-		flashback2.visible = false
+	if Input.is_action_pressed("ui_accept") and SignalBus.fish == 2 and flashback1IsPlaying == true:
+		anim.play("video1Out")
+		anim.play("fadeOut")
+		flashback1IsPlaying = false
 		emit_signal("FlashbackOver")
-	if Input.is_action_pressed("ui_accept") and SignalBus.fish == 3:
-		flashback3.visible = false
+	if Input.is_action_pressed("ui_accept") and SignalBus.fish == 3 and flashback1IsPlaying == true:
+		anim.play("video1Out")
+		anim.play("fadeOut")
+		flashback1IsPlaying = false
 		emit_signal("FlashbackOver")
 	if Input.is_action_pressed("ui_accept") and SignalBus.fish == 4:
 		flashback4.visible = false
@@ -49,13 +51,25 @@ func _on_fish_1_fishcollected() -> void:
 
 
 func _on_fish_2_fishcollected() -> void:
-	flashback2.visible = true
+	flashback1IsPlaying = true
 	emit_signal("FlashbackTime")
+	anim.play("fadeToWhite")
+	await get_tree().create_timer(1).timeout
+	flashback1.visible = true
+	video1.play()
+	await get_tree().create_timer(12).timeout
+	video_idle.play()
 
 
 func _on_fish_3_fishcollected() -> void:
-	flashback3.visible = true
+	flashback1IsPlaying = true
 	emit_signal("FlashbackTime")
+	anim.play("fadeToWhite")
+	await get_tree().create_timer(1).timeout
+	flashback1.visible = true
+	video1.play()
+	await get_tree().create_timer(12).timeout
+	video_idle.play()
 
 
 func _on_fish_4_fishcollected() -> void:

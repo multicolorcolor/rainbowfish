@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://g7xgkwwsalab"]
+[gd_scene load_steps=59 format=3 uid="uid://g7xgkwwsalab"]
 
 [ext_resource type="Script" path="res://Scripts/sceneManager.gd" id="1_dqiju"]
 [ext_resource type="Texture2D" uid="uid://x0u624kbbepl" path="res://layout/old/BG Layout_Page_01.jpg" id="1_fr252"]
@@ -43,6 +43,12 @@
 [ext_resource type="Texture2D" uid="uid://cjudvlvqwpfsh" path="res://layout/details/detail01.png" id="38_3brxp"]
 [ext_resource type="Texture2D" uid="uid://cwtmw4b80t87r" path="res://layout/details/waterfall.png" id="41_65d1s"]
 [ext_resource type="Texture2D" uid="uid://da0mp0uqkya0t" path="res://layout/details/reef.png" id="43_2e1a1"]
+[ext_resource type="Texture2D" uid="uid://cg2h2070ilckc" path="res://layout/details/particle.png" id="44_moho2"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_g7bfn"]
+
+[sub_resource type="Gradient" id="Gradient_fljsp"]
+colors = PackedColorArray(0.680974, 0.904303, 0, 1, 0.328028, 0.979688, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_w27kf"]
 
@@ -157,6 +163,81 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwixm"]
 size = Vector2(558, 2152)
 
+[sub_resource type="Animation" id="Animation_24smq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fish2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3813, 318)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fish2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fish2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fish3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5822, 1400)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fish3:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Fish3:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
 [sub_resource type="Animation" id="Animation_a2u4u"]
 resource_name = "fishes_swimming_without_care_in_the_world"
 length = 60.0
@@ -232,81 +313,6 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(2, 2), Vector2(-2, 2), Vector2(-1.70836, 2), Vector2(2, 2), Vector2(2, 2), Vector2(-2, 2), Vector2(-1.70836, 2), Vector2(2, 2), Vector2(2, 2), Vector2(-2, 2), Vector2(-1.70836, 2), Vector2(2, 2), Vector2(2, 2), Vector2(-2, 2), Vector2(-1.70836, 2), Vector2(2, 2), Vector2(2, 2)]
-}
-
-[sub_resource type="Animation" id="Animation_24smq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Fish2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3813, 318)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Fish2:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Fish2:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Fish3:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(5822, 1400)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Fish3:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Fish3:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mfpi8"]
@@ -442,6 +448,17 @@ texture = ExtResource("26_yh8ta")
 position = Vector2(16310, 1655)
 texture = ExtResource("27_jt5sp")
 
+[node name="Bg0" type="Sprite2D" parent="Layouts"]
+position = Vector2(2287, -130)
+scale = Vector2(0.771912, 0.771912)
+texture = ExtResource("30_7da55")
+
+[node name="Bg8" type="Sprite2D" parent="Layouts"]
+position = Vector2(-980, -130)
+scale = Vector2(1.847, 0.772)
+texture = ExtResource("30_7da55")
+flip_h = true
+
 [node name="Bg1" type="Sprite2D" parent="Layouts"]
 position = Vector2(4217, 255)
 scale = Vector2(0.669442, 0.669442)
@@ -451,11 +468,6 @@ texture = ExtResource("28_4x760")
 position = Vector2(6175.78, 1111.85)
 scale = Vector2(0.690884, 0.690884)
 texture = ExtResource("29_xb2w4")
-
-[node name="Bg0" type="Sprite2D" parent="Layouts"]
-position = Vector2(2287, -130)
-scale = Vector2(0.771912, 0.771912)
-texture = ExtResource("30_7da55")
 
 [node name="Bg3" type="Sprite2D" parent="Layouts"]
 position = Vector2(8148.16, 1214.7)
@@ -467,6 +479,103 @@ position = Vector2(10099.2, 1209.7)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("31_v7cd6")
 flip_h = true
+
+[node name="Bg5" type="Sprite2D" parent="Layouts"]
+position = Vector2(12053, 1209)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("31_v7cd6")
+
+[node name="Bg6" type="Sprite2D" parent="Layouts"]
+position = Vector2(15977, 1096)
+scale = Vector2(0.690884, 0.690884)
+texture = ExtResource("29_xb2w4")
+flip_h = true
+
+[node name="Bg7" type="Sprite2D" parent="Layouts"]
+position = Vector2(14007, 1209)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("31_v7cd6")
+flip_h = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_g7bfn")
+position = Vector2(1813, 5)
+amount = 50
+lifetime = 13.12
+preprocess = 60.61
+speed_scale = 0.5
+randomness = 0.11
+texture = ExtResource("44_moho2")
+emission_shape = 3
+emission_rect_extents = Vector2(500, 100)
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, -1)
+initial_velocity_max = 1.0
+tangential_accel_max = 4.04
+angle_max = 372.0
+scale_amount_min = 0.0
+color_ramp = SubResource("Gradient_fljsp")
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_g7bfn")
+position = Vector2(553, 5)
+amount = 50
+lifetime = 13.12
+preprocess = 60.61
+speed_scale = 0.5
+randomness = 0.11
+texture = ExtResource("44_moho2")
+emission_shape = 3
+emission_rect_extents = Vector2(500, 100)
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, -1)
+initial_velocity_max = 1.0
+tangential_accel_max = 4.04
+angle_max = 372.0
+scale_amount_min = 0.0
+color_ramp = SubResource("Gradient_fljsp")
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_g7bfn")
+position = Vector2(-334, 5)
+amount = 50
+lifetime = 13.12
+preprocess = 60.61
+speed_scale = 0.5
+randomness = 0.11
+texture = ExtResource("44_moho2")
+emission_shape = 3
+emission_rect_extents = Vector2(500, 100)
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, -1)
+initial_velocity_max = 1.0
+tangential_accel_max = 4.04
+angle_max = 372.0
+scale_amount_min = 0.0
+color_ramp = SubResource("Gradient_fljsp")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_g7bfn")
+position = Vector2(6347, 1633)
+amount = 55
+lifetime = 13.12
+preprocess = 60.61
+speed_scale = 0.5
+randomness = 0.11
+texture = ExtResource("44_moho2")
+emission_shape = 3
+emission_rect_extents = Vector2(500, 100)
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, -1)
+initial_velocity_max = 1.0
+tangential_accel_max = 4.04
+angle_max = 372.0
+scale_amount_min = 0.0
+color_ramp = SubResource("Gradient_fljsp")
 
 [node name="PlayerTestCharacterBody2D" parent="." instance=ExtResource("2_ru0e0")]
 position = Vector2(-394, 102)
@@ -614,7 +723,7 @@ position = Vector2(-582, 206)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
 visible = false
-polygon = PackedVector2Array(7, -1, 60, 0, 569, 12, 986, 10, 1159, 3, 1733, 14, 2269, 60, 2468, 93, 2808, 111, 3067, 119, 3201, 130, 3401, 130, 3700, 139, 4054, 207, 4634, 275, 4834, 303, 4992, 313, 5134, 331, 5335, 354, 5487, 402, 5657, 457, 5973, 528, 6583, 501, 6891, 475, 7300, 587, 7631, 614, 8166, 580, 8410, 611, 8429, 736, 8452, 996, 8444, 1084, 8263, 1087, 7742, 1092, 7459, 1169, 7275, 1132, 7168, 1072, 6920, 986, 6523, 959, 6122, 1010, 6121, 1179, 6173, 1210, 6203, 1254, 6379, 1319, 6562, 1378, 6685, 1494, 6831, 1539, 6988, 1599, 7159, 1690, 7317, 1789, 7452, 1831, 7602, 1854, 7726, 1842, 7817, 1816, 8672, 1815, 9990, 1798, 10973, 1836, 11753, 1857, 12718, 1873, 13498, 1873, 14026, 1540, 14963, 1146, 15457, 1066, 15797, 1029, 16118, 779, 16530, 693, 16965, 676, 17182, 665, 17279.2, 723.044, 17273, 77, 14195, 216, 13688, 638, 12889, 1209, 11642, 1461, 10433, 1081, 13058, -542, 17950, -349, 17495, 852, 16865, 3056, -502, 2449, -88, -401, 0, -490)
+polygon = PackedVector2Array(7, -1, 60, 0, 569, 12, 986, 10, 1159, 3, 1733, 14, 2269, 60, 2468, 93, 2808, 111, 3067, 119, 3201, 130, 3401, 130, 3700, 139, 4054, 207, 4634, 275, 4834, 303, 4992, 313, 5134, 331, 5335, 354, 5487, 402, 5657, 457, 5973, 528, 6583, 501, 6891, 475, 7300, 587, 7631, 614, 8166, 580, 8410, 611, 8429, 736, 8452, 996, 8444, 1084, 8263, 1087, 7742, 1092, 7459, 1169, 7275, 1132, 7168, 1072, 6920, 986, 6523, 959, 6122, 1010, 6121, 1179, 6173, 1210, 6203, 1254, 6379, 1319, 6562, 1378, 6685, 1494, 6831, 1539, 6988, 1599, 7159, 1690, 7317, 1789, 7452, 1831, 7602, 1854, 7726, 1842, 7829, 1823, 8169, 1854, 8661, 1879, 9869, 1832, 10973, 1836, 11753, 1857, 12718, 1873, 13498, 1873, 14242, 1858, 15096, 1855, 15624, 1827, 15942, 1798, 16185, 1575, 16627, 1484, 16744, 1372, 16956, 1301, 17093, 1268, 17196, 1158, 17070, 1080, 16903, 951, 16753, 780, 17182, 665, 17279.2, 723.044, 17273, 77, 14195, 216, 13688, 638, 12393, 1117, 11629, 1142, 10874, 1054, 13058, -542, 17950, -349, 17495, 852, 16865, 3056, -502, 2449, -88, -401, 0, -490)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
 visible = false
@@ -657,7 +766,7 @@ position = Vector2(5822, 1400)
 
 [node name="Fish4" parent="Fishes" instance=ExtResource("2_orlob")]
 modulate = Color(0.274287, 0.643954, 0, 1)
-position = Vector2(16504, 714)
+position = Vector2(16113, 1365)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Fishes"]
 libraries = {
