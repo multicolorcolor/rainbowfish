@@ -1,9 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://crg7a068vheai"]
+[gd_scene load_steps=24 format=3 uid="uid://crg7a068vheai"]
 
 [ext_resource type="Script" path="res://Scripts/player_test.gd" id="1_hd4yp"]
 [ext_resource type="Texture2D" uid="uid://3vilf7tea3a3" path="res://Placeholder/Character/Idle Cycle/1-new.png" id="3_hsogp"]
 [ext_resource type="Texture2D" uid="uid://cutuyf1jmg1hs" path="res://Placeholder/Character/Idle Cycle/2-new.png" id="4_e72hk"]
 [ext_resource type="Texture2D" uid="uid://on7gkuci1k0j" path="res://Placeholder/Character/Idle Cycle/3-new.png" id="5_gqyo4"]
+[ext_resource type="Texture2D" uid="uid://c7qdhmymlum62" path="res://Placeholder/Character/Jump Cycle/J1.png" id="6_83hgu"]
+[ext_resource type="Texture2D" uid="uid://lf7vfvq2l00w" path="res://Placeholder/Character/Jump Cycle/J2.png" id="7_5u3kw"]
+[ext_resource type="Texture2D" uid="uid://okujdobqwd0w" path="res://Placeholder/Character/Jump Cycle/J3.png" id="8_y4p7j"]
 [ext_resource type="Texture2D" uid="uid://duqkv2h356ul2" path="res://Placeholder/Character/Walking Cycle/W1.png" id="12_s1yii"]
 [ext_resource type="Texture2D" uid="uid://c7sfandxwtcsn" path="res://Placeholder/Character/Walking Cycle/W2.png" id="13_w0viv"]
 [ext_resource type="Texture2D" uid="uid://dp6sdmetroqrp" path="res://Placeholder/Character/Walking Cycle/W3.png" id="14_tdg07"]
@@ -55,7 +58,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_mj1km"]
 resource_name = "Jump"
-length = 0.5
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -63,10 +66,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.466667, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("12_s1yii")]
+"values": [ExtResource("6_83hgu"), ExtResource("7_5u3kw"), ExtResource("8_y4p7j")]
 }
 
 [sub_resource type="Animation" id="Animation_muhcx"]

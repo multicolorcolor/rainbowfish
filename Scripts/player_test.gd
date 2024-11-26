@@ -43,7 +43,7 @@ func update_animation():
 		animation.play('Idle')
 		
 	if velocity.y < 0:
-		animation.play("Idle")	
+		animation.play("Jump")	
 	if velocity.y > 0:
 		animation.play("Idle")		
 	
