@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://g7xgkwwsalab"]
+[gd_scene load_steps=65 format=3 uid="uid://g7xgkwwsalab"]
 
 [ext_resource type="Script" path="res://Scripts/sceneManager.gd" id="1_dqiju"]
 [ext_resource type="Texture2D" uid="uid://x0u624kbbepl" path="res://layout/old/BG Layout_Page_01.jpg" id="1_fr252"]
@@ -34,21 +34,27 @@
 [ext_resource type="Texture2D" uid="uid://c6qvcmvi3j7ct" path="res://layout/background/BG/BG1.jpg" id="28_4x760"]
 [ext_resource type="Texture2D" uid="uid://yy535q7hb31v" path="res://layout/background/BG/BG2.jpg" id="29_xb2w4"]
 [ext_resource type="Texture2D" uid="uid://ca5n4klgeooqa" path="res://layout/background/BG/BG0.jpg" id="30_7da55"]
-[ext_resource type="Texture2D" uid="uid://buq71m5iuydpf" path="res://layout/details/BG3.jpg" id="31_v7cd6"]
+[ext_resource type="Texture2D" uid="uid://cu574xdkpbdah" path="res://layout/background/BG/Forest_BG.jpg" id="31_l1b71"]
+[ext_resource type="Texture2D" uid="uid://buq71m5iuydpf" path="res://layout/background/BG/BG3.jpg" id="31_v7cd6"]
+[ext_resource type="Script" path="res://Scripts/breathing.gd" id="33_bnt2l"]
 [ext_resource type="VideoStream" path="res://video/0001-0300.ogv" id="34_hg1qd"]
 [ext_resource type="Texture2D" uid="uid://1cyy65752nej" path="res://layout/details/waterlayer.png" id="35_75k71"]
 [ext_resource type="VideoStream" path="res://video/flashback1_idle.ogv" id="35_yh0bu"]
 [ext_resource type="Texture2D" uid="uid://km7nuxhq41sj" path="res://layout/details/waterlayer_part1.png" id="36_rkjx6"]
 [ext_resource type="Texture2D" uid="uid://cc13s34bpgvh7" path="res://layout/details/waterlayer_part2.png" id="37_bcpg3"]
 [ext_resource type="Texture2D" uid="uid://cjudvlvqwpfsh" path="res://layout/details/detail01.png" id="38_3brxp"]
+[ext_resource type="Script" path="res://Scenes/reef_area.gd" id="39_d13yr"]
 [ext_resource type="Texture2D" uid="uid://cwtmw4b80t87r" path="res://layout/details/waterfall.png" id="41_65d1s"]
 [ext_resource type="Texture2D" uid="uid://da0mp0uqkya0t" path="res://layout/details/reef.png" id="43_2e1a1"]
 [ext_resource type="Texture2D" uid="uid://cg2h2070ilckc" path="res://layout/details/particle.png" id="44_moho2"]
+[ext_resource type="Texture2D" uid="uid://d1kj0uot1udje" path="res://layout/details/Forest_detail01.png" id="46_c25np"]
+[ext_resource type="Texture2D" uid="uid://goh32mmwbp40" path="res://layout/details/Forest_detail03.png" id="47_xca5l"]
+[ext_resource type="Texture2D" uid="uid://oqgplyar33m2" path="res://layout/details/Forest_detail02.png" id="48_rvyko"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_g7bfn"]
 
 [sub_resource type="Gradient" id="Gradient_fljsp"]
-colors = PackedColorArray(0.680974, 0.904303, 0, 1, 0.328028, 0.979688, 1, 1)
+colors = PackedColorArray(0.912094, 1, 0.781541, 1, 0.742746, 0.993676, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_w27kf"]
 
@@ -329,6 +335,7 @@ metadata/_edit_lock_ = true
 
 [node name="Sprite_background" type="Node2D" parent="Layouts"]
 visible = false
+metadata/_edit_lock_ = true
 
 [node name="BgLayoutPage01" type="Sprite2D" parent="Layouts/Sprite_background"]
 position = Vector2(-2, 6)
@@ -391,113 +398,169 @@ scale = Vector2(0.605, 0.605)
 texture = ExtResource("13_yyhiw")
 
 [node name="New_background" type="Node2D" parent="Layouts"]
+metadata/_edit_lock_ = true
 
 [node name="Background1" type="Sprite2D" parent="Layouts/New_background"]
 position = Vector2(380, 58)
 texture = ExtResource("14_jat1y")
+metadata/_edit_lock_ = true
 
 [node name="Background2" type="Sprite2D" parent="Layouts/New_background"]
 position = Vector2(3035, 58)
 texture = ExtResource("15_fla5m")
+metadata/_edit_lock_ = true
 
 [node name="Background3" type="Sprite2D" parent="Layouts/New_background"]
 position = Vector2(5690, 58)
 texture = ExtResource("16_f1pbb")
+metadata/_edit_lock_ = true
 
 [node name="Background4" type="Sprite2D" parent="Layouts/New_background"]
 position = Vector2(8345, 58)
 texture = ExtResource("17_4ots1")
+metadata/_edit_lock_ = true
 
 [node name="Background5" type="Sprite2D" parent="Layouts/New_background"]
 position = Vector2(11000, 58)
 texture = ExtResource("18_mo34c")
+metadata/_edit_lock_ = true
 
 [node name="Background6" type="Sprite2D" parent="Layouts/New_background"]
 position = Vector2(13655, 58)
 texture = ExtResource("19_pfrib")
+metadata/_edit_lock_ = true
 
 [node name="Background7" type="Sprite2D" parent="Layouts/New_background"]
 position = Vector2(16310, 58)
 texture = ExtResource("20_pyg1e")
+metadata/_edit_lock_ = true
 
 [node name="Background8" type="Sprite2D" parent="Layouts/New_background"]
 position = Vector2(380, 1655)
 texture = ExtResource("21_wxobd")
+metadata/_edit_lock_ = true
 
 [node name="Background9" type="Sprite2D" parent="Layouts/New_background"]
 position = Vector2(3035, 1655)
 texture = ExtResource("22_x1dbr")
+metadata/_edit_lock_ = true
 
 [node name="Background10" type="Sprite2D" parent="Layouts/New_background"]
 position = Vector2(5690, 1655)
 texture = ExtResource("23_6he83")
+metadata/_edit_lock_ = true
 
 [node name="Background11" type="Sprite2D" parent="Layouts/New_background"]
 position = Vector2(8345, 1655)
 texture = ExtResource("24_mrc11")
+metadata/_edit_lock_ = true
 
 [node name="Background12" type="Sprite2D" parent="Layouts/New_background"]
 position = Vector2(11000, 1655)
 texture = ExtResource("25_utbwc")
+metadata/_edit_lock_ = true
 
 [node name="Background13" type="Sprite2D" parent="Layouts/New_background"]
 position = Vector2(13655, 1655)
 texture = ExtResource("26_yh8ta")
+metadata/_edit_lock_ = true
 
 [node name="Background14" type="Sprite2D" parent="Layouts/New_background"]
 position = Vector2(16310, 1655)
 texture = ExtResource("27_jt5sp")
+metadata/_edit_lock_ = true
 
 [node name="Bg0" type="Sprite2D" parent="Layouts"]
 position = Vector2(2287, -130)
 scale = Vector2(0.771912, 0.771912)
 texture = ExtResource("30_7da55")
+metadata/_edit_lock_ = true
 
 [node name="Bg8" type="Sprite2D" parent="Layouts"]
+visible = false
 position = Vector2(-980, -130)
 scale = Vector2(1.847, 0.772)
 texture = ExtResource("30_7da55")
 flip_h = true
+metadata/_edit_lock_ = true
 
 [node name="Bg1" type="Sprite2D" parent="Layouts"]
 position = Vector2(4217, 255)
 scale = Vector2(0.669442, 0.669442)
 texture = ExtResource("28_4x760")
+metadata/_edit_lock_ = true
 
 [node name="Bg2" type="Sprite2D" parent="Layouts"]
 position = Vector2(6175.78, 1111.85)
 scale = Vector2(0.690884, 0.690884)
 texture = ExtResource("29_xb2w4")
+metadata/_edit_lock_ = true
+
+[node name="ForestBg" type="Sprite2D" parent="Layouts"]
+position = Vector2(1192, -170)
+scale = Vector2(1.53562, 1.53562)
+texture = ExtResource("31_l1b71")
+metadata/_edit_lock_ = true
 
 [node name="Bg3" type="Sprite2D" parent="Layouts"]
 position = Vector2(8148.16, 1214.7)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("31_v7cd6")
+metadata/_edit_lock_ = true
 
 [node name="Bg4" type="Sprite2D" parent="Layouts"]
 position = Vector2(10099.2, 1209.7)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("31_v7cd6")
 flip_h = true
+metadata/_edit_lock_ = true
 
 [node name="Bg5" type="Sprite2D" parent="Layouts"]
 position = Vector2(12053, 1209)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("31_v7cd6")
+metadata/_edit_lock_ = true
 
 [node name="Bg6" type="Sprite2D" parent="Layouts"]
 position = Vector2(15977, 1096)
 scale = Vector2(0.690884, 0.690884)
 texture = ExtResource("29_xb2w4")
 flip_h = true
+metadata/_edit_lock_ = true
 
 [node name="Bg7" type="Sprite2D" parent="Layouts"]
 position = Vector2(14007, 1209)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("31_v7cd6")
 flip_h = true
+metadata/_edit_lock_ = true
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -254.0
+offset_top = 30.0
+offset_right = -31.0
+offset_bottom = 57.0
+grow_horizontal = 0
+rounded = true
+script = ExtResource("33_bnt2l")
+
+[node name="AirAreas" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="AirAreas"]
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AirAreas/Area2D"]
+position = Vector2(3806, 207)
+polygon = PackedVector2Array(-5009, -827, -5175, 690, -3467, 905, -622, 180, 2879, 196, 4287, -1152)
+
+[node name="Particles" type="Node2D" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Particles"]
 material = SubResource("CanvasItemMaterial_g7bfn")
 position = Vector2(1813, 5)
 amount = 50
@@ -517,7 +580,7 @@ angle_max = 372.0
 scale_amount_min = 0.0
 color_ramp = SubResource("Gradient_fljsp")
 
-[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="Particles"]
 material = SubResource("CanvasItemMaterial_g7bfn")
 position = Vector2(553, 5)
 amount = 50
@@ -537,7 +600,7 @@ angle_max = 372.0
 scale_amount_min = 0.0
 color_ramp = SubResource("Gradient_fljsp")
 
-[node name="CPUParticles2D4" type="CPUParticles2D" parent="."]
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="Particles"]
 material = SubResource("CanvasItemMaterial_g7bfn")
 position = Vector2(-334, 5)
 amount = 50
@@ -557,7 +620,7 @@ angle_max = 372.0
 scale_amount_min = 0.0
 color_ramp = SubResource("Gradient_fljsp")
 
-[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="Particles"]
 material = SubResource("CanvasItemMaterial_g7bfn")
 position = Vector2(6347, 1633)
 amount = 55
@@ -586,6 +649,12 @@ position = Vector2(112, -34.5714)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="PlayerTestCharacterBody2D"]
 
+[node name="BreathingMechanicControl" type="Control" parent="PlayerTestCharacterBody2D/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="CollectedFishControl" type="Control" parent="PlayerTestCharacterBody2D"]
 layout_mode = 3
 anchors_preset = 0
@@ -593,6 +662,7 @@ offset_left = -52.2857
 offset_top = -123.143
 offset_right = 218.714
 offset_bottom = -83.1429
+metadata/_edit_lock_ = true
 
 [node name="Text" type="RichTextLabel" parent="PlayerTestCharacterBody2D/CollectedFishControl"]
 modulate = Color(0.366595, 0.366595, 0.366595, 1)
@@ -602,6 +672,7 @@ offset_bottom = 65.0
 scale = Vector2(0.613333, 0.6)
 text = "Amount of fish collected: "
 script = ExtResource("3_yt2u6")
+metadata/_edit_lock_ = true
 
 [node name="Flashbacks" type="Control" parent="PlayerTestCharacterBody2D"]
 layout_mode = 3
@@ -612,12 +683,14 @@ offset_right = -53.05
 offset_bottom = -137.305
 scale = Vector2(0.857074, 0.862739)
 script = ExtResource("16_hixwt")
+metadata/_edit_lock_ = true
 
 [node name="fadeToWhite" type="MeshInstance2D" parent="PlayerTestCharacterBody2D/Flashbacks"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(195.016, 113.189)
 scale = Vector2(388.031, 231.014)
 mesh = SubResource("BoxMesh_w27kf")
+metadata/_edit_lock_ = true
 
 [node name="Flashback1" type="Panel" parent="PlayerTestCharacterBody2D/Flashbacks"]
 visible = false
@@ -725,9 +798,24 @@ position = Vector2(-582, 206)
 visible = false
 polygon = PackedVector2Array(7, -1, 60, 0, 569, 12, 986, 10, 1159, 3, 1733, 14, 2269, 60, 2468, 93, 2808, 111, 3067, 119, 3201, 130, 3401, 130, 3700, 139, 4054, 207, 4634, 275, 4834, 303, 4992, 313, 5134, 331, 5335, 354, 5487, 402, 5657, 457, 5973, 528, 6583, 501, 6891, 475, 7300, 587, 7631, 614, 8166, 580, 8410, 611, 8429, 736, 8452, 996, 8444, 1084, 8263, 1087, 7742, 1092, 7459, 1169, 7275, 1132, 7168, 1072, 6920, 986, 6523, 959, 6122, 1010, 6121, 1179, 6173, 1210, 6203, 1254, 6379, 1319, 6562, 1378, 6685, 1494, 6831, 1539, 6988, 1599, 7159, 1690, 7317, 1789, 7452, 1831, 7602, 1854, 7726, 1842, 7829, 1823, 8169, 1854, 8661, 1879, 9869, 1832, 10973, 1836, 11753, 1857, 12718, 1873, 13498, 1873, 14242, 1858, 15096, 1855, 15624, 1827, 15942, 1798, 16185, 1575, 16627, 1484, 16744, 1372, 16956, 1301, 17093, 1268, 17196, 1158, 17070, 1080, 16903, 951, 16753, 780, 17182, 665, 17279.2, 723.044, 17273, 77, 14195, 216, 13688, 638, 12393, 1117, 11629, 1142, 10874, 1054, 13058, -542, 17950, -349, 17495, 852, 16865, 3056, -502, 2449, -88, -401, 0, -490)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-visible = false
-position = Vector2(9958, 1119)
+[node name="ReefArea" type="Area2D" parent="Ground"]
+monitorable = false
+script = ExtResource("39_d13yr")
+
+[node name="Reef2" type="Sprite2D" parent="Ground/ReefArea"]
+position = Vector2(10465, 1586)
+scale = Vector2(1.965, 1.965)
+texture = ExtResource("43_2e1a1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/ReefArea"]
+position = Vector2(9376, 1325)
+shape = SubResource("RectangleShape2D_uwixm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground/ReefArea"]
+position = Vector2(-582, 206)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/ReefArea/StaticBody2D"]
+position = Vector2(9960, 1122)
 shape = SubResource("RectangleShape2D_uwixm")
 
 [node name="Foreground_details" type="Node2D" parent="."]
@@ -788,7 +876,7 @@ texture = ExtResource("38_3brxp")
 
 [node name="Detail02" type="Sprite2D" parent="Foreground_details2"]
 modulate = Color(1, 1, 1, 0.941176)
-position = Vector2(2196, 466)
+position = Vector2(2100, 528)
 scale = Vector2(0.763288, 0.763288)
 texture = ExtResource("38_3brxp")
 flip_h = true
@@ -798,11 +886,21 @@ position = Vector2(7721, 2127)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("43_2e1a1")
 
-[node name="Reef2" type="Sprite2D" parent="Foreground_details2"]
-position = Vector2(10465, 1586)
-scale = Vector2(1.965, 1.965)
-texture = ExtResource("43_2e1a1")
+[node name="ForestDetail01" type="Sprite2D" parent="Foreground_details2"]
+position = Vector2(216, 275)
+texture = ExtResource("46_c25np")
 
+[node name="ForestDetail03" type="Sprite2D" parent="Foreground_details2"]
+position = Vector2(-567, 154)
+scale = Vector2(0.768868, 0.768868)
+texture = ExtResource("47_xca5l")
+
+[node name="ForestDetail02" type="Sprite2D" parent="Foreground_details2"]
+position = Vector2(950, 210)
+texture = ExtResource("48_rvyko")
+
+[connection signal="body_entered" from="AirAreas/Area2D" to="CanvasLayer/ProgressBar" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="AirAreas/Area2D" to="CanvasLayer/ProgressBar" method="_on_area_2d_body_exited"]
 [connection signal="FlashbackOver" from="PlayerTestCharacterBody2D/Flashbacks" to="PlayerTestCharacterBody2D" method="_on_flashbacks_flashback_over"]
 [connection signal="FlashbackTime" from="PlayerTestCharacterBody2D/Flashbacks" to="PlayerTestCharacterBody2D" method="_on_flashbacks_flashback_time"]
 [connection signal="Fishcollected" from="Fishes/Fish1" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_1_fishcollected"]
