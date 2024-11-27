@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://g7xgkwwsalab"]
+[gd_scene load_steps=66 format=3 uid="uid://g7xgkwwsalab"]
 
 [ext_resource type="Script" path="res://Scripts/sceneManager.gd" id="1_dqiju"]
 [ext_resource type="Texture2D" uid="uid://x0u624kbbepl" path="res://layout/old/BG Layout_Page_01.jpg" id="1_fr252"]
@@ -100,6 +100,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../CanvasLayer/DeathScreen:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ensj8"]
 resource_name = "fadeOut"
@@ -158,8 +170,25 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_gck6p"]
+resource_name = "DeathScreen"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../CanvasLayer/DeathScreen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ex3bo"]
 _data = {
+"DeathScreen": SubResource("Animation_gck6p"),
 "RESET": SubResource("Animation_mfx1o"),
 "fadeOut": SubResource("Animation_ensj8"),
 "fadeToWhite": SubResource("Animation_xbt04"),
@@ -549,6 +578,43 @@ grow_horizontal = 0
 rounded = true
 script = ExtResource("33_bnt2l")
 
+[node name="DeathScreen" type="Control" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -536.0
+offset_bottom = -284.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/DeathScreen"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 657.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/DeathScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 349.0
+offset_top = 242.0
+offset_right = 804.0
+offset_bottom = 348.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 46
+text = "You ran out of air"
+
 [node name="AirAreas" type="Node2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="AirAreas"]
@@ -557,6 +623,14 @@ monitorable = false
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AirAreas/Area2D"]
 position = Vector2(3806, 207)
 polygon = PackedVector2Array(-5009, -827, -5175, 690, -3467, 905, -622, 180, 2879, 196, 4287, -1152)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="AirAreas/Area2D"]
+position = Vector2(5524, 1371)
+polygon = PackedVector2Array(6, -11, 881, -9, 1630, 18, 2321, -15, 1122, -297, 460, -324)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="AirAreas/Area2D"]
+position = Vector2(14360, 1386)
+polygon = PackedVector2Array(-32, -21, 881, -9, 1303, -27, 1659, -41, 2330, -21, 2123, -168, 1784, -383, 1122, -297, 460, -324)
 
 [node name="Particles" type="Node2D" parent="."]
 
@@ -785,6 +859,7 @@ offset_bottom = 255.667
 text = "End of the prototype"
 
 [node name="TransitionAnimations" type="AnimationPlayer" parent="PlayerTestCharacterBody2D/Flashbacks"]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_ex3bo")
 }
@@ -854,7 +929,7 @@ position = Vector2(5822, 1400)
 
 [node name="Fish4" parent="Fishes" instance=ExtResource("2_orlob")]
 modulate = Color(0.274287, 0.643954, 0, 1)
-position = Vector2(16113, 1365)
+position = Vector2(16477, 1355)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Fishes"]
 libraries = {
