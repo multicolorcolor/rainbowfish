@@ -1,0 +1,9 @@
+[gd_resource type="AudioStreamPlaylist" load_steps=3 format=3 uid="uid://chr6p4b60pokp"]
+
+[ext_resource type="AudioStream" uid="uid://d13id6ks81rek" path="res://SFX/Fish pick up/randomizer_pickup.tres" id="1_hdic6"]
+[ext_resource type="AudioStream" uid="uid://x54jkg5kr3r3" path="res://SFX/Fish pick up/randomizer_pickup2.tres" id="2_4ebb6"]
+
+[resource]
+stream_count = 2
+stream_0 = ExtResource("1_hdic6")
+stream_1 = ExtResource("2_4ebb6")

@@ -1,0 +1,9 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=2 format=3 uid="uid://x54jkg5kr3r3"]
+
+[ext_resource type="AudioStream" uid="uid://c8xdrsgwrmm3u" path="res://SFX/Fish pick up/Pick up 2.mp3" id="2_pfcjb"]
+
+[resource]
+playback_mode = 1
+random_pitch = 2.08
+streams_count = 1
+stream_0/stream = ExtResource("2_pfcjb")

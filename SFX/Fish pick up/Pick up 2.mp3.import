@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8xdrsgwrmm3u"
+path="res://.godot/imported/Pick up 2.mp3-580b2216c8487558a7cdaba4f435b2b4.mp3str"
+
+[deps]
+
+source_file="res://SFX/Fish pick up/Pick up 2.mp3"
+dest_files=["res://.godot/imported/Pick up 2.mp3-580b2216c8487558a7cdaba4f435b2b4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://g7xgkwwsalab"]
+[gd_scene load_steps=77 format=3 uid="uid://g7xgkwwsalab"]
 
 [ext_resource type="Script" path="res://Scripts/sceneManager.gd" id="1_dqiju"]
 [ext_resource type="Texture2D" uid="uid://x0u624kbbepl" path="res://layout/old/BG Layout_Page_01.jpg" id="1_fr252"]
@@ -37,19 +37,30 @@
 [ext_resource type="Texture2D" uid="uid://cu574xdkpbdah" path="res://layout/background/BG/Forest_BG.jpg" id="31_l1b71"]
 [ext_resource type="Texture2D" uid="uid://buq71m5iuydpf" path="res://layout/background/BG/BG3.jpg" id="31_v7cd6"]
 [ext_resource type="Script" path="res://Scripts/breathing.gd" id="33_bnt2l"]
-[ext_resource type="VideoStream" path="res://video/0001-0300.ogv" id="34_hg1qd"]
 [ext_resource type="Texture2D" uid="uid://1cyy65752nej" path="res://layout/details/waterlayer.png" id="35_75k71"]
-[ext_resource type="VideoStream" path="res://video/flashback1_idle.ogv" id="35_yh0bu"]
 [ext_resource type="Texture2D" uid="uid://km7nuxhq41sj" path="res://layout/details/waterlayer_part1.png" id="36_rkjx6"]
 [ext_resource type="Texture2D" uid="uid://cc13s34bpgvh7" path="res://layout/details/waterlayer_part2.png" id="37_bcpg3"]
 [ext_resource type="Texture2D" uid="uid://cjudvlvqwpfsh" path="res://layout/details/detail01.png" id="38_3brxp"]
+[ext_resource type="VideoStream" path="res://video/Flashback01.ogv" id="38_njxtn"]
 [ext_resource type="Script" path="res://Scenes/reef_area.gd" id="39_d13yr"]
+[ext_resource type="VideoStream" path="res://video/Flashback01Idle.ogv" id="39_vapal"]
+[ext_resource type="VideoStream" path="res://video/Flashback02.ogv" id="40_ju8ha"]
+[ext_resource type="VideoStream" path="res://video/flashback02_idle.ogv" id="41_3f3c0"]
 [ext_resource type="Texture2D" uid="uid://cwtmw4b80t87r" path="res://layout/details/waterfall.png" id="41_65d1s"]
 [ext_resource type="Texture2D" uid="uid://da0mp0uqkya0t" path="res://layout/details/reef.png" id="43_2e1a1"]
 [ext_resource type="Texture2D" uid="uid://cg2h2070ilckc" path="res://layout/details/particle.png" id="44_moho2"]
 [ext_resource type="Texture2D" uid="uid://d1kj0uot1udje" path="res://layout/details/Forest_detail01.png" id="46_c25np"]
 [ext_resource type="Texture2D" uid="uid://goh32mmwbp40" path="res://layout/details/Forest_detail03.png" id="47_xca5l"]
 [ext_resource type="Texture2D" uid="uid://oqgplyar33m2" path="res://layout/details/Forest_detail02.png" id="48_rvyko"]
+[ext_resource type="AudioStream" uid="uid://x54jkg5kr3r3" path="res://SFX/Fish pick up/randomizer_pickup2.tres" id="50_4j6c6"]
+[ext_resource type="AudioStream" uid="uid://d13id6ks81rek" path="res://SFX/Fish pick up/randomizer_pickup.tres" id="51_m661f"]
+[ext_resource type="Script" path="res://Scripts/audio.gd" id="53_ils0b"]
+[ext_resource type="AudioStream" uid="uid://c3o5yxjxuyu0y" path="res://SFX/Memories/Memory appear.wav" id="53_opp6j"]
+[ext_resource type="AudioStream" uid="uid://c6bny2q0q2gsg" path="res://SFX/Memories/Men cheering.wav" id="54_381j8"]
+[ext_resource type="AudioStream" uid="uid://by4udlulq36pw" path="res://SFX/BG Ambient/BG Ambient.wav" id="55_kv2b1"]
+[ext_resource type="AudioStream" uid="uid://dt100u22p8wms" path="res://SFX/BG Ambient/BG Ambient 2.wav" id="56_xg1kv"]
+[ext_resource type="AudioStream" uid="uid://405jue68hly1" path="res://SFX/Forrest Ambient/Main Forrest.wav" id="60_wk8vu"]
+[ext_resource type="AudioStream" uid="uid://markj4gle5sv" path="res://SFX/Forrest Ambient/Water Body in Forrest.wav" id="61_8gy6g"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_g7bfn"]
 
@@ -62,12 +73,28 @@ colors = PackedColorArray(0.912094, 1, 0.781541, 1, 0.742746, 0.993676, 1, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wnly5"]
 
+[sub_resource type="Animation" id="Animation_gck6p"]
+resource_name = "DeathScreen"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../CanvasLayer/DeathScreen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_mfx1o"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("fadeToWhite:modulate")
+tracks/0/path = NodePath("fadeToWhite2:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -79,34 +106,10 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Flashback1/Video:modulate")
+tracks/1/path = NodePath("../../CanvasLayer/DeathScreen:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Flashback1/videoIdle:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../../CanvasLayer/DeathScreen:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -118,7 +121,7 @@ resource_name = "fadeOut"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("fadeToWhite:modulate")
+tracks/0/path = NodePath("fadeToWhite2:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -133,7 +136,7 @@ resource_name = "fadeToWhite"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("fadeToWhite:modulate")
+tracks/0/path = NodePath("fadeToWhite2:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -145,46 +148,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_5bld5"]
 resource_name = "video1Out"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Flashback1/Video:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Flashback1/videoIdle:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_gck6p"]
-resource_name = "DeathScreen"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../CanvasLayer/DeathScreen:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ex3bo"]
 _data = {
@@ -320,10 +283,10 @@ tracks/3/path = NodePath("Fish3:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.66667, 3.86667, 4.975, 7.7, 9.66667, 11.7333, 15, 17.6, 18.8, 19.9083, 22.6333, 24.6, 26.6667, 29.9333, 32.4667, 33.6667, 34.775, 37.5, 39.4667, 41.5333, 44.8, 47.4333, 48.6333, 49.7417, 52.4667, 54.4333, 56.5, 59.7667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2.66667, 3.93333, 4.56667, 6.1, 8.1, 10.8667, 12.1333, 12.7667, 14.3, 16.3, 19.1667, 20.4333, 21.0667, 22.6, 24.6, 27.4, 28.6667, 29.3, 30.8333, 32.8333, 35.6, 36.8667, 37.5, 39.0333, 41.0333, 43.9, 45.1667, 45.8, 47.3333, 49.3333, 51.8667, 53.1333, 53.7667, 55.3, 57.3, 58.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(5822, 1400), Vector2(6044, 1454), Vector2(6151, 1375), Vector2(6253, 1275), Vector2(6173, 1157), Vector2(6045, 1137), Vector2(5875, 1184), Vector2(5822, 1400), Vector2(6044, 1454), Vector2(6151, 1375), Vector2(6253, 1275), Vector2(6173, 1157), Vector2(6045, 1137), Vector2(5875, 1184), Vector2(5822, 1400), Vector2(6044, 1454), Vector2(6151, 1375), Vector2(6253, 1275), Vector2(6173, 1157), Vector2(6045, 1137), Vector2(5875, 1184), Vector2(5822, 1400), Vector2(6044, 1454), Vector2(6151, 1375), Vector2(6253, 1275), Vector2(6173, 1157), Vector2(6045, 1137), Vector2(5875, 1184), Vector2(5822, 1400)]
+"values": [Vector2(5822, 1400), Vector2(6044, 1454), Vector2(6151, 1375), Vector2(6151, 1375), Vector2(6044, 1454), Vector2(5822, 1400), Vector2(6044, 1454), Vector2(6151, 1375), Vector2(6151, 1375), Vector2(6044, 1454), Vector2(5822, 1400), Vector2(6044, 1454), Vector2(6151, 1375), Vector2(6151, 1375), Vector2(6044, 1454), Vector2(5822, 1400), Vector2(6044, 1454), Vector2(6151, 1375), Vector2(6151, 1375), Vector2(6044, 1454), Vector2(5822, 1400), Vector2(6044, 1454), Vector2(6151, 1375), Vector2(6151, 1375), Vector2(6044, 1454), Vector2(5822, 1400), Vector2(6044, 1454), Vector2(6151, 1375), Vector2(6151, 1375), Vector2(6044, 1454), Vector2(5822, 1400), Vector2(6044, 1454), Vector2(6151, 1375), Vector2(6151, 1375), Vector2(6044, 1454), Vector2(5822, 1400), Vector2(5811, 1415)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -332,10 +295,10 @@ tracks/4/path = NodePath("Fish3:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.1, 1.23333, 2.7, 3.96667, 5, 6.73333, 7.86667, 9.1, 9.83333, 10.9, 12.1333, 13.3, 14.9333, 16.1667, 17.6333, 18.9, 19.9333, 21.6667, 22.8, 24.0333, 24.7667, 25.8333, 27.0667, 28.2333, 29.8667, 31.0333, 32.5, 33.7667, 34.8, 36.5333, 37.6667, 38.9, 39.6333, 40.7, 41.9333, 43.1, 44.7333, 46, 47.4667, 48.7333, 49.7667, 51.5, 52.6333, 53.8667, 54.6, 55.6667, 56.9, 58.0667, 59.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.1, 1.23333, 2.7, 4.03333, 4.66667, 6.13333, 7.23333, 8.2, 9.43333, 10.9, 12.2333, 12.8667, 14.3333, 15.4333, 16.4, 17.7333, 19.2, 20.5333, 21.1667, 22.6333, 23.7333, 24.7, 25.9667, 27.4333, 28.7667, 29.4, 30.8667, 31.9667, 32.9333, 34.1667, 35.6333, 36.9667, 37.6, 39.0667, 40.1667, 41.1333, 42.4667, 43.9333, 45.2667, 45.9, 47.3667, 48.4667, 49.4333, 50.4333, 51.9, 53.2333, 53.8667, 55.3333, 56.4333, 57.4, 58.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, -0.176278, 0.00174533, -0.352556, -0.165806, 0.368264, -0.167552, -0.340339, 0.0191986, 0.0191986, -0.689405, -0.499164, 0.0, -0.176278, 0.00174533, -0.352556, -0.165806, 0.368264, -0.167552, -0.340339, 0.0191986, 0.0191986, -0.689405, -0.499164, 0.0, -0.176278, 0.00174533, -0.352556, -0.165806, 0.368264, -0.167552, -0.340339, 0.0191986, 0.0191986, -0.689405, -0.499164, 0.0, -0.176278, 0.00174533, -0.352556, -0.165806, 0.368264, -0.167552, -0.340339, 0.0191986, 0.0191986, -0.689405, -0.499164, 0.0]
+"values": [0.0, -0.176278, 0.00174533, -0.352556, -0.352556, 0.00174533, -0.176278, 0.0, -0.176278, 0.00174533, -0.352556, -0.352556, 0.00174533, -0.176278, 0.0, -0.176278, 0.00174533, -0.352556, -0.352556, 0.00174533, -0.176278, 0.0, -0.176278, 0.00174533, -0.352556, -0.352556, 0.00174533, -0.176278, 0.0, -0.176278, 0.00174533, -0.352556, -0.352556, 0.00174533, -0.176278, 0.0, -0.176278, 0.00174533, -0.352556, -0.352556, 0.00174533, -0.176278, 0.0, -0.176278, 0.00174533, -0.352556, -0.352556, 0.00174533, -0.176278, 0.0, -0.354302]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -344,10 +307,10 @@ tracks/5/path = NodePath("Fish3:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.566667, 5.13333, 5.7, 14.9333, 15.5, 20.0667, 20.6333, 29.8667, 30.3667, 34.9333, 35.5, 44.7333, 45.3333, 49.9, 50.4667, 59.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.566667, 4.13333, 4.6, 8.2, 8.76667, 12.3333, 12.8, 16.4, 17.0667, 20.6333, 21.1, 24.7, 25.3, 28.8667, 29.3333, 32.9333, 33.5, 37.0667, 37.5333, 41.1333, 41.8, 45.3667, 45.8333, 49.4333, 49.7667, 53.3333, 53.8, 57.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(2, 2), Vector2(-2, 2), Vector2(-1.70836, 2), Vector2(2, 2), Vector2(2, 2), Vector2(-2, 2), Vector2(-1.70836, 2), Vector2(2, 2), Vector2(2, 2), Vector2(-2, 2), Vector2(-1.70836, 2), Vector2(2, 2), Vector2(2, 2), Vector2(-2, 2), Vector2(-1.70836, 2), Vector2(2, 2), Vector2(2, 2)]
+"values": [Vector2(2, 2), Vector2(-2, 2), Vector2(-2, 2), Vector2(2, 2), Vector2(2, 2), Vector2(-2, 2), Vector2(-2, 2), Vector2(2, 2), Vector2(2, 2), Vector2(-2, 2), Vector2(-2, 2), Vector2(2, 2), Vector2(2, 2), Vector2(-2, 2), Vector2(-2, 2), Vector2(2, 2), Vector2(2, 2), Vector2(-2, 2), Vector2(-2, 2), Vector2(2, 2), Vector2(2, 2), Vector2(-2, 2), Vector2(-2, 2), Vector2(2, 2), Vector2(2, 2), Vector2(-2, 2), Vector2(-2, 2), Vector2(2, 2), Vector2(2, 2)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mfpi8"]
@@ -714,6 +677,27 @@ angle_max = 372.0
 scale_amount_min = 0.0
 color_ramp = SubResource("Gradient_fljsp")
 
+[node name="CPUParticles2D5" type="CPUParticles2D" parent="Particles"]
+material = SubResource("CanvasItemMaterial_g7bfn")
+position = Vector2(16470, 1391)
+amount = 55
+lifetime = 13.12
+preprocess = 60.61
+speed_scale = 0.5
+randomness = 0.11
+texture = ExtResource("44_moho2")
+emission_shape = 3
+emission_rect_extents = Vector2(500, 100)
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, -1)
+initial_velocity_max = 1.0
+orbit_velocity_max = 0.5
+tangential_accel_max = 4.04
+angle_max = 372.0
+scale_amount_min = 0.0
+color_ramp = SubResource("Gradient_fljsp")
+
 [node name="PlayerTestCharacterBody2D" parent="." instance=ExtResource("2_ru0e0")]
 position = Vector2(-394, 102)
 scale = Vector2(3.5, 3.5)
@@ -759,12 +743,13 @@ scale = Vector2(0.857074, 0.862739)
 script = ExtResource("16_hixwt")
 metadata/_edit_lock_ = true
 
-[node name="fadeToWhite" type="MeshInstance2D" parent="PlayerTestCharacterBody2D/Flashbacks"]
+[node name="fadeToWhite2" type="MeshInstance2D" parent="PlayerTestCharacterBody2D/Flashbacks"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(195.016, 113.189)
 scale = Vector2(388.031, 231.014)
 mesh = SubResource("BoxMesh_w27kf")
-metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PlayerTestCharacterBody2D/Flashbacks"]
 
 [node name="Flashback1" type="Panel" parent="PlayerTestCharacterBody2D/Flashbacks"]
 visible = false
@@ -781,7 +766,7 @@ offset_top = 11.1166
 offset_right = 1919.56
 offset_bottom = 1099.12
 scale = Vector2(0.202, 0.202)
-stream = ExtResource("34_hg1qd")
+stream = ExtResource("38_njxtn")
 
 [node name="videoIdle" type="VideoStreamPlayer" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback1"]
 layout_mode = 0
@@ -790,7 +775,7 @@ offset_top = 11.1166
 offset_right = 1919.56
 offset_bottom = 1099.12
 scale = Vector2(0.202, 0.202)
-stream = ExtResource("35_yh0bu")
+stream = ExtResource("39_vapal")
 loop = true
 
 [node name="Text" type="RichTextLabel" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback1"]
@@ -814,18 +799,47 @@ text = "Press Space to skip"
 [node name="Flashback2" type="Panel" parent="PlayerTestCharacterBody2D/Flashbacks"]
 visible = false
 material = SubResource("CanvasItemMaterial_3unfs")
-layout_mode = 0
-offset_right = 381.0
-offset_bottom = 214.0
+layout_mode = 1
+offset_right = 385.0
+offset_bottom = 220.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wnly5")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback2"]
+[node name="Video02" type="VideoStreamPlayer" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback2"]
+layout_mode = 2
+offset_left = -0.441706
+offset_top = 11.1166
+offset_right = 1919.56
+offset_bottom = 1099.12
+scale = Vector2(0.202, 0.202)
+stream = ExtResource("40_ju8ha")
+
+[node name="videoIdle" type="VideoStreamPlayer" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback2"]
 layout_mode = 0
-offset_left = 97.6667
-offset_top = 86.6667
-offset_right = 292.667
-offset_bottom = 255.667
-text = "Flashback 2
-Press Space to continue"
+offset_left = -0.441711
+offset_top = 11.1166
+offset_right = 1919.56
+offset_bottom = 1099.12
+scale = Vector2(0.202, 0.202)
+stream = ExtResource("41_3f3c0")
+loop = true
+
+[node name="Text" type="RichTextLabel" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.9306
+offset_top = 87.5659
+offset_right = 264.069
+offset_bottom = 256.566
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.355, 0.355)
+theme_override_font_sizes/normal_font_size = 34
+text = "Press Space to skip"
 
 [node name="Flashback3" type="Panel" parent="PlayerTestCharacterBody2D/Flashbacks"]
 visible = false
@@ -863,6 +877,13 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_ex3bo")
 }
+
+[node name="fadeToWhite" type="MeshInstance2D" parent="PlayerTestCharacterBody2D/Flashbacks"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(5.32605, -36.7835)
+scale = Vector2(1164, 697.567)
+mesh = SubResource("BoxMesh_w27kf")
 
 [node name="Ground" type="Node2D" parent="."]
 
@@ -974,11 +995,54 @@ texture = ExtResource("47_xca5l")
 position = Vector2(950, 210)
 texture = ExtResource("48_rvyko")
 
+[node name="Audio" type="Node2D" parent="."]
+script = ExtResource("53_ils0b")
+
+[node name="Pickup_01_randomized" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("51_m661f")
+
+[node name="Pickup_02_randomized" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("50_4j6c6")
+
+[node name="Memory_appear" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("53_opp6j")
+
+[node name="Men_Cheering" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("54_381j8")
+
+[node name="BG_Ambient_1" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("55_kv2b1")
+volume_db = 5.0
+
+[node name="BG_Ambient_2" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("56_xg1kv")
+volume_db = -80.0
+
+[node name="Forest_Ambient_3" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("60_wk8vu")
+
+[node name="Forest_Ambient_4" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("61_8gy6g")
+volume_db = -80.0
+
 [connection signal="body_entered" from="AirAreas/Area2D" to="CanvasLayer/ProgressBar" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="AirAreas/Area2D" to="Audio" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="AirAreas/Area2D" to="CanvasLayer/ProgressBar" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="AirAreas/Area2D" to="Audio" method="_on_area_2d_body_exited"]
 [connection signal="FlashbackOver" from="PlayerTestCharacterBody2D/Flashbacks" to="PlayerTestCharacterBody2D" method="_on_flashbacks_flashback_over"]
 [connection signal="FlashbackTime" from="PlayerTestCharacterBody2D/Flashbacks" to="PlayerTestCharacterBody2D" method="_on_flashbacks_flashback_time"]
+[connection signal="finished" from="PlayerTestCharacterBody2D/Flashbacks/Flashback1/Video" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_video_finished"]
+[connection signal="finished" from="PlayerTestCharacterBody2D/Flashbacks/Flashback2/Video02" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_video_02_finished"]
 [connection signal="Fishcollected" from="Fishes/Fish1" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_1_fishcollected"]
 [connection signal="Fishcollected" from="Fishes/Fish2" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_2_fishcollected"]
 [connection signal="Fishcollected" from="Fishes/Fish3" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_3_fishcollected"]
 [connection signal="Fishcollected" from="Fishes/Fish4" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_4_fishcollected"]
+[connection signal="finished" from="Audio/Pickup_01_randomized" to="." method="_on_pickup_01_randomized_finished"]

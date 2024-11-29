@@ -1,5 +1,6 @@
 extends CharacterBody2D
 @onready var flashback1 = $Flashbacks/Flashback1
+@onready var flashback2 = $Flashbacks/Flashback2
 
 @onready var animation = $AnimationPlayer
 @onready var sprite = $Sprite2D
@@ -55,10 +56,13 @@ func _input(event):
 			get_tree().change_scene_to_file("res://Scenes/Main menu test.tscn")
 		if event.keycode ==KEY_SPACE and SignalBus.fish == 1:
 			flashback1.visible = false
+			flashback2.visible = false
 		if event.keycode ==KEY_SPACE and SignalBus.fish == 2:
 			flashback1.visible = false
+			flashback2.visible = false
 		if event.keycode ==KEY_SPACE and SignalBus.fish == 3:
 			flashback1.visible = false
+			flashback2.visible = false
 
 
 func _on_flashbacks_flashback_time() -> void:

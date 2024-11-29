@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://d2nll4g1yk0gh"]
+[gd_scene load_steps=12 format=3 uid="uid://d2nll4g1yk0gh"]
 
 [ext_resource type="Script" path="res://Scripts/fish_col_control.gd" id="1_5nes6"]
 [ext_resource type="Texture2D" uid="uid://ciuyar23mvdgo" path="res://Placeholder/Fish animation/Ppl1.PNG" id="2_hvry8"]
 [ext_resource type="Texture2D" uid="uid://duam0ikykoyhd" path="res://Placeholder/Fish animation/Ppl2.PNG" id="3_o3aq4"]
 [ext_resource type="Texture2D" uid="uid://cx5ncyejvvx8a" path="res://Placeholder/Fish animation/Ppl3.PNG" id="4_sttid"]
 [ext_resource type="Texture2D" uid="uid://h1g4awoujodj" path="res://Placeholder/Fish animation/Ppl4.PNG" id="5_ewohp"]
+[ext_resource type="AudioStream" uid="uid://x54jkg5kr3r3" path="res://SFX/Fish pick up/randomizer_pickup2.tres" id="6_uf3yh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mtrnl"]
 radius = 25.0
@@ -75,5 +76,8 @@ texture = ExtResource("2_hvry8")
 libraries = {
 "": SubResource("AnimationLibrary_hg1ys")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_uf3yh")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

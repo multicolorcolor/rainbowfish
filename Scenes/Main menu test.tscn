@@ -1,8 +1,53 @@
-[gd_scene load_steps=4 format=3 uid="uid://bf1mu6ywlwd0y"]
+[gd_scene load_steps=16 format=3 uid="uid://bf1mu6ywlwd0y"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_u51rd"]
 [ext_resource type="Texture2D" uid="uid://rx7ssci5cp8l" path="res://MenuTextures/Artboard 3.png" id="2_ftts5"]
 [ext_resource type="Texture2D" uid="uid://bdwok0gxrwaaa" path="res://MenuTextures/PLAY.png" id="3_tu7ph"]
+[ext_resource type="Script" path="res://Scripts/audio.gd" id="4_2g1id"]
+[ext_resource type="AudioStream" uid="uid://d13id6ks81rek" path="res://SFX/Fish pick up/randomizer_pickup.tres" id="5_bywdt"]
+[ext_resource type="AudioStream" uid="uid://x54jkg5kr3r3" path="res://SFX/Fish pick up/randomizer_pickup2.tres" id="6_6hphe"]
+[ext_resource type="AudioStream" uid="uid://c3o5yxjxuyu0y" path="res://SFX/Memories/Memory appear.wav" id="7_d7ghg"]
+[ext_resource type="AudioStream" uid="uid://c6bny2q0q2gsg" path="res://SFX/Memories/Men cheering.wav" id="8_bwuu1"]
+[ext_resource type="AudioStream" uid="uid://by4udlulq36pw" path="res://SFX/BG Ambient/BG Ambient.wav" id="9_t47dd"]
+[ext_resource type="AudioStream" uid="uid://dt100u22p8wms" path="res://SFX/BG Ambient/BG Ambient 2.wav" id="10_1ldoi"]
+[ext_resource type="AudioStream" uid="uid://405jue68hly1" path="res://SFX/Forrest Ambient/Main Forrest.wav" id="11_fd6ql"]
+[ext_resource type="AudioStream" uid="uid://markj4gle5sv" path="res://SFX/Forrest Ambient/Water Body in Forrest.wav" id="12_ace4e"]
+
+[sub_resource type="Animation" id="Animation_sr6qf"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f6ur2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xoh55"]
+_data = {
+"RESET": SubResource("Animation_f6ur2"),
+"fade": SubResource("Animation_sr6qf")
+}
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_u51rd")
@@ -46,5 +91,57 @@ offset_top = 99.0
 offset_right = 191.0
 offset_bottom = 202.0
 icon = ExtResource("3_tu7ph")
+
+[node name="Audio" type="Node2D" parent="."]
+script = ExtResource("4_2g1id")
+
+[node name="Pickup_01_randomized" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("5_bywdt")
+
+[node name="Pickup_02_randomized" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("6_6hphe")
+
+[node name="Memory_appear" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("7_d7ghg")
+
+[node name="Men_Cheering" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("8_bwuu1")
+
+[node name="BG_Ambient_1" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("9_t47dd")
+volume_db = 5.0
+
+[node name="BG_Ambient_2" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("10_1ldoi")
+volume_db = -80.0
+
+[node name="Forest_Ambient_3" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("11_fd6ql")
+
+[node name="Forest_Ambient_4" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("12_ace4e")
+volume_db = -80.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -591.0
+offset_top = -379.0
+offset_right = 599.0
+offset_bottom = 340.0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+color = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xoh55")
+}
 
 [connection signal="button_down" from="Control2/Button2" to="." method="_on_button_2_button_down"]
