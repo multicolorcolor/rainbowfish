@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://bf1mu6ywlwd0y"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_u51rd"]
-[ext_resource type="Texture2D" uid="uid://rx7ssci5cp8l" path="res://MenuTextures/Artboard 3.png" id="2_ftts5"]
+[ext_resource type="Texture2D" uid="uid://dn3jic1l6ord5" path="res://layout/background/BG/menu.jpg" id="2_vnt0l"]
 [ext_resource type="Texture2D" uid="uid://bdwok0gxrwaaa" path="res://MenuTextures/PLAY.png" id="3_tu7ph"]
 [ext_resource type="Script" path="res://Scripts/audio.gd" id="4_2g1id"]
 [ext_resource type="AudioStream" uid="uid://d13id6ks81rek" path="res://SFX/Fish pick up/randomizer_pickup.tres" id="5_bywdt"]
@@ -12,21 +12,6 @@
 [ext_resource type="AudioStream" uid="uid://dt100u22p8wms" path="res://SFX/BG Ambient/BG Ambient 2.wav" id="10_1ldoi"]
 [ext_resource type="AudioStream" uid="uid://405jue68hly1" path="res://SFX/Forrest Ambient/Main Forrest.wav" id="11_fd6ql"]
 [ext_resource type="AudioStream" uid="uid://markj4gle5sv" path="res://SFX/Forrest Ambient/Water Body in Forrest.wav" id="12_ace4e"]
-
-[sub_resource type="Animation" id="Animation_sr6qf"]
-resource_name = "fade"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_f6ur2"]
 length = 0.001
@@ -43,6 +28,21 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_sr6qf"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xoh55"]
 _data = {
 "RESET": SubResource("Animation_f6ur2"),
@@ -55,7 +55,7 @@ script = ExtResource("1_u51rd")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.999985, -2)
 scale = Vector2(0.480238, 0.429667)
-texture = ExtResource("2_ftts5")
+texture = ExtResource("2_vnt0l")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
