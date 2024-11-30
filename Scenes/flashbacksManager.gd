@@ -96,6 +96,11 @@ func _on_fish_4_fishcollected() -> void:
 	flashback4.visible = true
 	pickupAudio.play()
 	memoryAppear.play()
+	%Inventory.visible = true
+	%Fish1.disabled = false
+	%Fish2.disabled = false
+	%Fish3.disabled = false
+	%Fish4.disabled = false
 	get_tree().paused = true
 
 

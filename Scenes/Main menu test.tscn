@@ -1,9 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://bf1mu6ywlwd0y"]
+[gd_scene load_steps=21 format=3 uid="uid://bf1mu6ywlwd0y"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_u51rd"]
 [ext_resource type="Texture2D" uid="uid://dn3jic1l6ord5" path="res://layout/background/BG/menu.jpg" id="2_vnt0l"]
-[ext_resource type="Texture2D" uid="uid://bdwok0gxrwaaa" path="res://MenuTextures/PLAY.png" id="3_tu7ph"]
+[ext_resource type="Texture2D" uid="uid://cg2h2070ilckc" path="res://layout/details/particle.png" id="3_p54ix"]
 [ext_resource type="Script" path="res://Scripts/audio.gd" id="4_2g1id"]
+[ext_resource type="Texture2D" uid="uid://bg8a64kjnavfa" path="res://UI/Play Button.png" id="4_5jlhh"]
+[ext_resource type="Texture2D" uid="uid://cdxeogij425j3" path="res://UI/Play Button - Copy.png" id="5_0k66o"]
 [ext_resource type="AudioStream" uid="uid://d13id6ks81rek" path="res://SFX/Fish pick up/randomizer_pickup.tres" id="5_bywdt"]
 [ext_resource type="AudioStream" uid="uid://x54jkg5kr3r3" path="res://SFX/Fish pick up/randomizer_pickup2.tres" id="6_6hphe"]
 [ext_resource type="AudioStream" uid="uid://c3o5yxjxuyu0y" path="res://SFX/Memories/Memory appear.wav" id="7_d7ghg"]
@@ -12,6 +14,13 @@
 [ext_resource type="AudioStream" uid="uid://dt100u22p8wms" path="res://SFX/BG Ambient/BG Ambient 2.wav" id="10_1ldoi"]
 [ext_resource type="AudioStream" uid="uid://405jue68hly1" path="res://SFX/Forrest Ambient/Main Forrest.wav" id="11_fd6ql"]
 [ext_resource type="AudioStream" uid="uid://markj4gle5sv" path="res://SFX/Forrest Ambient/Water Body in Forrest.wav" id="12_ace4e"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wmic6"]
+
+[sub_resource type="Gradient" id="Gradient_6v8o0"]
+colors = PackedColorArray(0.912094, 1, 0.781541, 1, 0.742746, 0.993676, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6p76w"]
 
 [sub_resource type="Animation" id="Animation_f6ur2"]
 length = 0.001
@@ -57,6 +66,26 @@ position = Vector2(0.999985, -2)
 scale = Vector2(0.480238, 0.429667)
 texture = ExtResource("2_vnt0l")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_wmic6")
+position = Vector2(-4, 41)
+amount = 50
+lifetime = 13.12
+preprocess = 60.61
+speed_scale = 0.5
+randomness = 0.11
+texture = ExtResource("3_p54ix")
+emission_shape = 3
+emission_rect_extents = Vector2(500, 100)
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, -1)
+initial_velocity_max = 1.0
+tangential_accel_max = 4.04
+angle_max = 372.0
+scale_amount_min = 0.0
+color_ramp = SubResource("Gradient_6v8o0")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Button" type="Button" parent="."]
@@ -85,12 +114,25 @@ offset_right = 8.0
 offset_bottom = 8.0
 
 [node name="Button2" type="Button" parent="Control2"]
+visible = false
 layout_mode = 0
-offset_left = -188.0
-offset_top = 99.0
-offset_right = 191.0
-offset_bottom = 202.0
-icon = ExtResource("3_tu7ph")
+offset_left = -278.0
+offset_top = -233.0
+offset_right = 198.0
+offset_bottom = 256.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6p76w")
+icon = ExtResource("4_5jlhh")
+
+[node name="TextureButton" type="TextureButton" parent="Control2"]
+layout_mode = 0
+offset_left = -144.0
+offset_top = -149.0
+offset_right = 324.0
+offset_bottom = 332.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("4_5jlhh")
+texture_hover = ExtResource("5_0k66o")
 
 [node name="Audio" type="Node2D" parent="."]
 script = ExtResource("4_2g1id")
@@ -145,3 +187,4 @@ libraries = {
 }
 
 [connection signal="button_down" from="Control2/Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_down" from="Control2/TextureButton" to="." method="_on_texture_button_button_down"]

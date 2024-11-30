@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://g7xgkwwsalab"]
+[gd_scene load_steps=89 format=3 uid="uid://g7xgkwwsalab"]
 
 [ext_resource type="Script" path="res://Scripts/sceneManager.gd" id="1_dqiju"]
 [ext_resource type="Texture2D" uid="uid://x0u624kbbepl" path="res://layout/old/BG Layout_Page_01.jpg" id="1_fr252"]
@@ -37,11 +37,21 @@
 [ext_resource type="Texture2D" uid="uid://cu574xdkpbdah" path="res://layout/background/BG/Forest_BG.jpg" id="31_l1b71"]
 [ext_resource type="Texture2D" uid="uid://buq71m5iuydpf" path="res://layout/background/BG/BG3.jpg" id="31_v7cd6"]
 [ext_resource type="Script" path="res://Scripts/breathing.gd" id="33_bnt2l"]
+[ext_resource type="Texture2D" uid="uid://q2pkuddjxbq" path="res://UI/Backpack Icon/Closed Bag.png" id="33_d784n"]
+[ext_resource type="Texture2D" uid="uid://drhstesxovkj1" path="res://UI/Backpack Icon/bag_empty.png" id="33_tcjf3"]
+[ext_resource type="Texture2D" uid="uid://bwjit60y005kp" path="res://UI/memory frame.png" id="33_tdgmh"]
+[ext_resource type="Texture2D" uid="uid://bpe0pffwhllpq" path="res://UI/Backpack Icon/Open Bag.png" id="34_g7suj"]
+[ext_resource type="Texture2D" uid="uid://dgxl28asodxw5" path="res://UI/Fish Memory Recap/Ellipse BG.png" id="35_0cbrb"]
+[ext_resource type="Texture2D" uid="uid://fwloowvrdx7e" path="res://UI/Oxygen Bar/Bar Outline.png" id="35_1sdf4"]
 [ext_resource type="Texture2D" uid="uid://1cyy65752nej" path="res://layout/details/waterlayer.png" id="35_75k71"]
+[ext_resource type="Texture2D" uid="uid://cenc7vo5pse7p" path="res://UI/Oxygen Bar/Oxygen Text.png" id="36_77ykx"]
 [ext_resource type="Texture2D" uid="uid://km7nuxhq41sj" path="res://layout/details/waterlayer_part1.png" id="36_rkjx6"]
 [ext_resource type="Texture2D" uid="uid://cc13s34bpgvh7" path="res://layout/details/waterlayer_part2.png" id="37_bcpg3"]
+[ext_resource type="Texture2D" uid="uid://bgj1p1mq74gaa" path="res://UI/Fish Memory Recap/PurpleFish.png" id="37_de2aq"]
+[ext_resource type="Texture2D" uid="uid://dsq3thafeogba" path="res://UI/Oxygen Bar/Bar Fill.png" id="37_f0jyc"]
 [ext_resource type="Texture2D" uid="uid://cjudvlvqwpfsh" path="res://layout/details/detail01.png" id="38_3brxp"]
 [ext_resource type="VideoStream" path="res://video/Flashback01.ogv" id="38_njxtn"]
+[ext_resource type="Texture2D" uid="uid://d3tapu5hro1o0" path="res://UI/Fish Memory Recap/Black-White Fish.png" id="38_vdhxg"]
 [ext_resource type="Script" path="res://Scenes/reef_area.gd" id="39_d13yr"]
 [ext_resource type="VideoStream" path="res://video/Flashback01Idle.ogv" id="39_vapal"]
 [ext_resource type="VideoStream" path="res://video/Flashback02.ogv" id="40_ju8ha"]
@@ -49,7 +59,10 @@
 [ext_resource type="Texture2D" uid="uid://cwtmw4b80t87r" path="res://layout/details/waterfall.png" id="41_65d1s"]
 [ext_resource type="Texture2D" uid="uid://da0mp0uqkya0t" path="res://layout/details/reef.png" id="43_2e1a1"]
 [ext_resource type="Texture2D" uid="uid://cg2h2070ilckc" path="res://layout/details/particle.png" id="44_moho2"]
+[ext_resource type="Texture2D" uid="uid://dt4bb2odlgduk" path="res://UI/Fish Memory Recap/OrangeFish.png" id="44_u6ocy"]
+[ext_resource type="Texture2D" uid="uid://bx0ouxeaklnvi" path="res://UI/Fish Memory Recap/YellowFish.png" id="45_kxogh"]
 [ext_resource type="Texture2D" uid="uid://d1kj0uot1udje" path="res://layout/details/Forest_detail01.png" id="46_c25np"]
+[ext_resource type="Texture2D" uid="uid://ba8mckwc82m84" path="res://UI/Fish Memory Recap/GreenFish.png" id="46_irec4"]
 [ext_resource type="Texture2D" uid="uid://goh32mmwbp40" path="res://layout/details/Forest_detail03.png" id="47_xca5l"]
 [ext_resource type="Texture2D" uid="uid://oqgplyar33m2" path="res://layout/details/Forest_detail02.png" id="48_rvyko"]
 [ext_resource type="AudioStream" uid="uid://x54jkg5kr3r3" path="res://SFX/Fish pick up/randomizer_pickup2.tres" id="50_4j6c6"]
@@ -70,8 +83,6 @@ colors = PackedColorArray(0.912094, 1, 0.781541, 1, 0.742746, 0.993676, 1, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_w27kf"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3unfs"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wnly5"]
 
 [sub_resource type="Animation" id="Animation_gck6p"]
 resource_name = "DeathScreen"
@@ -530,6 +541,7 @@ metadata/_edit_lock_ = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -539,7 +551,6 @@ offset_right = -31.0
 offset_bottom = 57.0
 grow_horizontal = 0
 rounded = true
-script = ExtResource("33_bnt2l")
 
 [node name="DeathScreen" type="Control" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
@@ -578,20 +589,271 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 46
 text = "You ran out of air"
 
+[node name="Oxygen" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+offset_left = -0.0750732
+offset_top = 0.145
+offset_right = 2105.92
+offset_bottom = 1193.15
+color = Color(0.835294, 0, 0.192157, 0.443137)
+
+[node name="memory01" type="Control" parent="CanvasLayer"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -11.0
+offset_right = 29.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/memory01"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 67.0
+offset_right = 1911.0
+offset_bottom = 878.0
+scale = Vector2(0.545, 0.545)
+texture = ExtResource("33_tdgmh")
+
+[node name="Video" type="VideoStreamPlayer" parent="CanvasLayer/memory01"]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 89.0
+offset_right = 2184.0
+offset_bottom = 1177.0
+scale = Vector2(0.337, 0.337)
+stream = ExtResource("38_njxtn")
+
+[node name="videoIdle" type="VideoStreamPlayer" parent="CanvasLayer/memory01"]
+process_mode = 3
+layout_mode = 0
+offset_left = 264.0
+offset_top = 89.0
+offset_right = 2184.0
+offset_bottom = 1177.0
+scale = Vector2(0.337, 0.337)
+stream = ExtResource("39_vapal")
+loop = true
+
+[node name="memory02" type="Control" parent="CanvasLayer"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -11.0
+offset_right = 29.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/memory02"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 67.0
+offset_right = 1911.0
+offset_bottom = 878.0
+scale = Vector2(0.545, 0.545)
+texture = ExtResource("33_tdgmh")
+
+[node name="Video02" type="VideoStreamPlayer" parent="CanvasLayer/memory02"]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 89.0
+offset_right = 2184.0
+offset_bottom = 1177.0
+scale = Vector2(0.337, 0.337)
+stream = ExtResource("40_ju8ha")
+
+[node name="videoIdle02" type="VideoStreamPlayer" parent="CanvasLayer/memory02"]
+process_mode = 3
+layout_mode = 0
+offset_left = 264.0
+offset_top = 89.0
+offset_right = 2184.0
+offset_bottom = 1177.0
+scale = Vector2(0.337, 0.337)
+stream = ExtResource("41_3f3c0")
+loop = true
+
+[node name="Bag" type="TextureButton" parent="CanvasLayer"]
+process_mode = 3
+offset_left = 38.0
+offset_top = 22.0
+offset_right = 213.0
+offset_bottom = 162.0
+scale = Vector2(0.54, 0.54)
+focus_mode = 0
+texture_normal = ExtResource("33_tcjf3")
+
+[node name="Closed" type="TextureRect" parent="CanvasLayer/Bag"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("33_d784n")
+
+[node name="Open" type="TextureRect" parent="CanvasLayer/Bag"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("34_g7suj")
+
+[node name="Inventory" type="TextureRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -262.0
+offset_top = -283.0
+offset_right = 617.0
+offset_bottom = 598.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.595, 0.595)
+mouse_filter = 2
+texture = ExtResource("35_0cbrb")
+
+[node name="Fish1" type="TextureButton" parent="CanvasLayer/Inventory"]
+unique_name_in_owner = true
+process_mode = 3
+layout_mode = 0
+offset_left = 507.563
+offset_top = 87.3949
+offset_right = 1328.56
+offset_bottom = 539.395
+rotation = 0.296706
+scale = Vector2(0.245, 0.245)
+focus_mode = 0
+disabled = true
+texture_normal = ExtResource("37_de2aq")
+texture_disabled = ExtResource("38_vdhxg")
+
+[node name="Fish2" type="TextureButton" parent="CanvasLayer/Inventory"]
+unique_name_in_owner = true
+process_mode = 3
+layout_mode = 0
+offset_left = 183.193
+offset_top = 184.874
+offset_right = 1004.19
+offset_bottom = 636.874
+rotation = -0.549779
+scale = Vector2(0.245, 0.245)
+disabled = true
+texture_normal = ExtResource("44_u6ocy")
+texture_disabled = ExtResource("38_vdhxg")
+
+[node name="Fish3" type="TextureButton" parent="CanvasLayer/Inventory"]
+unique_name_in_owner = true
+process_mode = 3
+layout_mode = 0
+offset_left = 82.353
+offset_top = 522.689
+offset_right = 903.353
+offset_bottom = 974.689
+rotation = -1.53764
+scale = Vector2(0.245, 0.245)
+disabled = true
+texture_normal = ExtResource("45_kxogh")
+texture_disabled = ExtResource("38_vdhxg")
+
+[node name="Fish4" type="TextureButton" parent="CanvasLayer/Inventory"]
+unique_name_in_owner = true
+process_mode = 3
+layout_mode = 0
+offset_left = 378.151
+offset_top = 700.84
+offset_right = 1199.15
+offset_bottom = 1152.84
+rotation = -5.63218
+scale = Vector2(-0.245, 0.245)
+disabled = true
+texture_normal = ExtResource("46_irec4")
+texture_disabled = ExtResource("38_vdhxg")
+
+[node name="Fish5" type="Control" parent="CanvasLayer/Inventory"]
+anchors_preset = 0
+offset_left = 699.16
+offset_top = 729.412
+offset_right = 739.16
+offset_bottom = 769.412
+rotation = 5.85907
+scale = Vector2(-0.245, 0.245)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Inventory/Fish5"]
+layout_mode = 0
+offset_left = -90.7563
+offset_top = -393.277
+offset_right = 730.244
+offset_bottom = 58.7227
+texture = ExtResource("38_vdhxg")
+
+[node name="Fish6" type="Control" parent="CanvasLayer/Inventory"]
+anchors_preset = 0
+offset_left = 820.168
+offset_top = 374.79
+offset_right = 860.168
+offset_bottom = 414.79
+rotation = 4.87121
+scale = Vector2(-0.245, 0.245)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Inventory/Fish6"]
+layout_mode = 0
+offset_left = -90.7563
+offset_top = -393.277
+offset_right = 730.244
+offset_bottom = 58.7227
+texture = ExtResource("38_vdhxg")
+
+[node name="Fish7" type="Control" parent="CanvasLayer/Inventory"]
+anchors_preset = 0
+offset_left = 314.286
+offset_top = 497.479
+offset_right = 354.286
+offset_bottom = 537.479
+rotation = 0.211185
+scale = Vector2(0.455, 0.455)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Inventory/Fish7"]
+layout_mode = 0
+offset_left = -90.7563
+offset_top = -393.277
+offset_right = 730.244
+offset_bottom = 58.7227
+texture = ExtResource("38_vdhxg")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 822.0
+offset_top = 38.0
+offset_right = 1556.0
+offset_bottom = 280.0
+scale = Vector2(0.565, 0.565)
+step = 0.01
+rounded = true
+fill_mode = 1
+texture_under = ExtResource("35_1sdf4")
+texture_over = ExtResource("36_77ykx")
+texture_progress = ExtResource("37_f0jyc")
+script = ExtResource("33_bnt2l")
+
 [node name="AirAreas" type="Node2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="AirAreas"]
 monitorable = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AirAreas/Area2D"]
+visible = false
 position = Vector2(3806, 207)
 polygon = PackedVector2Array(-5009, -827, -5175, 690, -3467, 905, -622, 180, 2879, 196, 4287, -1152)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="AirAreas/Area2D"]
+visible = false
 position = Vector2(5524, 1371)
 polygon = PackedVector2Array(6, -11, 881, -9, 1630, 18, 2321, -15, 1122, -297, 460, -324)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="AirAreas/Area2D"]
+visible = false
 position = Vector2(14360, 1386)
 polygon = PackedVector2Array(-32, -21, 881, -9, 1303, -27, 1659, -41, 2330, -21, 2123, -168, 1784, -383, 1122, -297, 460, -324)
 
@@ -698,22 +960,25 @@ angle_max = 372.0
 scale_amount_min = 0.0
 color_ramp = SubResource("Gradient_fljsp")
 
-[node name="PlayerTestCharacterBody2D" parent="." instance=ExtResource("2_ru0e0")]
+[node name="Player" parent="." instance=ExtResource("2_ru0e0")]
+unique_name_in_owner = true
 position = Vector2(-394, 102)
 scale = Vector2(3.5, 3.5)
 
-[node name="Camera2D" type="Camera2D" parent="PlayerTestCharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(112, -34.5714)
+scale = Vector2(1, 1)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="PlayerTestCharacterBody2D"]
+[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
 
-[node name="BreathingMechanicControl" type="Control" parent="PlayerTestCharacterBody2D/CanvasLayer"]
+[node name="BreathingMechanicControl" type="Control" parent="Player/CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="CollectedFishControl" type="Control" parent="PlayerTestCharacterBody2D"]
+[node name="CollectedFishControl" type="Control" parent="Player"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -52.2857
@@ -722,7 +987,7 @@ offset_right = 218.714
 offset_bottom = -83.1429
 metadata/_edit_lock_ = true
 
-[node name="Text" type="RichTextLabel" parent="PlayerTestCharacterBody2D/CollectedFishControl"]
+[node name="Text" type="RichTextLabel" parent="Player/CollectedFishControl"]
 modulate = Color(0.366595, 0.366595, 0.366595, 1)
 layout_mode = 0
 offset_right = 313.0
@@ -732,7 +997,7 @@ text = "Amount of fish collected: "
 script = ExtResource("3_yt2u6")
 metadata/_edit_lock_ = true
 
-[node name="Flashbacks" type="Control" parent="PlayerTestCharacterBody2D"]
+[node name="Flashbacks" type="Control" parent="Player"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -53.05
@@ -743,112 +1008,95 @@ scale = Vector2(0.857074, 0.862739)
 script = ExtResource("16_hixwt")
 metadata/_edit_lock_ = true
 
-[node name="fadeToWhite2" type="MeshInstance2D" parent="PlayerTestCharacterBody2D/Flashbacks"]
+[node name="fadeToWhite2" type="MeshInstance2D" parent="Player/Flashbacks"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(195.016, 113.189)
 scale = Vector2(388.031, 231.014)
 mesh = SubResource("BoxMesh_w27kf")
+metadata/_edit_lock_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="PlayerTestCharacterBody2D/Flashbacks"]
-
-[node name="Flashback1" type="Panel" parent="PlayerTestCharacterBody2D/Flashbacks"]
+[node name="Flashback1" type="CanvasLayer" parent="Player/Flashbacks"]
 visible = false
-material = SubResource("CanvasItemMaterial_3unfs")
-layout_mode = 1
-offset_right = 385.0
-offset_bottom = 220.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_wnly5")
 
-[node name="Video" type="VideoStreamPlayer" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback1"]
-layout_mode = 2
-offset_left = -0.441706
-offset_top = 11.1166
-offset_right = 1919.56
-offset_bottom = 1099.12
-scale = Vector2(0.202, 0.202)
+[node name="Video" type="VideoStreamPlayer" parent="Player/Flashbacks/Flashback1"]
+offset_left = -1.99999
+offset_top = -5.0
+offset_right = 1918.0
+offset_bottom = 1083.0
+scale = Vector2(0.607, 0.607)
 stream = ExtResource("38_njxtn")
 
-[node name="videoIdle" type="VideoStreamPlayer" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback1"]
-layout_mode = 0
-offset_left = -0.441711
-offset_top = 11.1166
-offset_right = 1919.56
-offset_bottom = 1099.12
-scale = Vector2(0.202, 0.202)
+[node name="videoIdle" type="VideoStreamPlayer" parent="Player/Flashbacks/Flashback1"]
+offset_left = -2.0
+offset_top = -5.0
+offset_right = 1918.0
+offset_bottom = 1083.0
+scale = Vector2(0.607, 0.607)
 stream = ExtResource("39_vapal")
 loop = true
 
-[node name="Text" type="RichTextLabel" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback1"]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 1
+[node name="Text" type="RichTextLabel" parent="Player/Flashbacks/Flashback1"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -54.9306
-offset_top = 87.5659
-offset_right = 264.069
-offset_bottom = 256.566
+offset_left = -126.0
+offset_top = 225.0
+offset_right = 193.0
+offset_bottom = 394.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.355, 0.355)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 34
 text = "Press Space to skip"
 
-[node name="Flashback2" type="Panel" parent="PlayerTestCharacterBody2D/Flashbacks"]
+[node name="Flashback2" type="CanvasLayer" parent="Player/Flashbacks"]
 visible = false
-material = SubResource("CanvasItemMaterial_3unfs")
-layout_mode = 1
-offset_right = 385.0
-offset_bottom = 220.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_wnly5")
 
-[node name="Video02" type="VideoStreamPlayer" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback2"]
-layout_mode = 2
-offset_left = -0.441706
-offset_top = 11.1166
-offset_right = 1919.56
-offset_bottom = 1099.12
-scale = Vector2(0.202, 0.202)
+[node name="Video02" type="VideoStreamPlayer" parent="Player/Flashbacks/Flashback2"]
+offset_left = -5.0
+offset_top = -4.0
+offset_right = 1915.0
+offset_bottom = 1084.0
+scale = Vector2(0.607, 0.607)
 stream = ExtResource("40_ju8ha")
 
-[node name="videoIdle" type="VideoStreamPlayer" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback2"]
-layout_mode = 0
-offset_left = -0.441711
-offset_top = 11.1166
-offset_right = 1919.56
-offset_bottom = 1099.12
-scale = Vector2(0.202, 0.202)
+[node name="videoIdle" type="VideoStreamPlayer" parent="Player/Flashbacks/Flashback2"]
+offset_left = -5.0
+offset_top = -4.0
+offset_right = 1915.0
+offset_bottom = 1084.0
+scale = Vector2(0.607, 0.607)
 stream = ExtResource("41_3f3c0")
 loop = true
 
-[node name="Text" type="RichTextLabel" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback2"]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 1
+[node name="Text" type="RichTextLabel" parent="Player/Flashbacks/Flashback2"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -54.9306
-offset_top = 87.5659
-offset_right = 264.069
-offset_bottom = 256.566
+offset_left = -126.0
+offset_top = 225.0
+offset_right = 193.0
+offset_bottom = 394.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.355, 0.355)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 34
 text = "Press Space to skip"
 
-[node name="Flashback3" type="Panel" parent="PlayerTestCharacterBody2D/Flashbacks"]
+[node name="Flashback3" type="Panel" parent="Player/Flashbacks"]
 visible = false
 material = SubResource("CanvasItemMaterial_3unfs")
 layout_mode = 0
 offset_right = 383.0
 offset_bottom = 214.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback3"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Flashbacks/Flashback3"]
 layout_mode = 0
 offset_left = 97.6667
 offset_top = 86.6667
@@ -857,14 +1105,14 @@ offset_bottom = 255.667
 text = "Flashback 3
 Press Space to continue"
 
-[node name="Flashback4" type="Panel" parent="PlayerTestCharacterBody2D/Flashbacks"]
+[node name="Flashback4" type="Panel" parent="Player/Flashbacks"]
 visible = false
 material = SubResource("CanvasItemMaterial_3unfs")
 layout_mode = 0
 offset_right = 384.0
 offset_bottom = 220.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PlayerTestCharacterBody2D/Flashbacks/Flashback4"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Flashbacks/Flashback4"]
 layout_mode = 0
 offset_left = 97.6667
 offset_top = 86.6667
@@ -872,13 +1120,13 @@ offset_right = 292.667
 offset_bottom = 255.667
 text = "End of the prototype"
 
-[node name="TransitionAnimations" type="AnimationPlayer" parent="PlayerTestCharacterBody2D/Flashbacks"]
+[node name="TransitionAnimations" type="AnimationPlayer" parent="Player/Flashbacks"]
 unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_ex3bo")
 }
 
-[node name="fadeToWhite" type="MeshInstance2D" parent="PlayerTestCharacterBody2D/Flashbacks"]
+[node name="fadeToWhite" type="MeshInstance2D" parent="Player/Flashbacks"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(5.32605, -36.7835)
@@ -949,7 +1197,7 @@ modulate = Color(1, 0.797057, 0.244597, 1)
 position = Vector2(5822, 1400)
 
 [node name="Fish4" parent="Fishes" instance=ExtResource("2_orlob")]
-modulate = Color(0.274287, 0.643954, 0, 1)
+modulate = Color(0.446489, 0.862825, 3.85046e-07, 1)
 position = Vector2(16477, 1355)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Fishes"]
@@ -1033,16 +1281,24 @@ unique_name_in_owner = true
 stream = ExtResource("61_8gy6g")
 volume_db = -80.0
 
-[connection signal="body_entered" from="AirAreas/Area2D" to="CanvasLayer/ProgressBar" method="_on_area_2d_body_entered"]
+[connection signal="finished" from="CanvasLayer/memory01/Video" to="." method="_on_video_finished"]
+[connection signal="finished" from="CanvasLayer/memory02/Video02" to="." method="_on_video_02_finished"]
+[connection signal="button_down" from="CanvasLayer/Bag" to="." method="_on_bag_button_down"]
+[connection signal="toggled" from="CanvasLayer/Bag" to="." method="_on_bag_toggled"]
+[connection signal="button_down" from="CanvasLayer/Inventory/Fish1" to="." method="_on_fish_1_button_down"]
+[connection signal="button_down" from="CanvasLayer/Inventory/Fish2" to="." method="_on_fish_2_button_down"]
+[connection signal="button_down" from="CanvasLayer/Inventory/Fish3" to="." method="_on_fish_3_button_down"]
+[connection signal="button_down" from="CanvasLayer/Inventory/Fish4" to="." method="_on_fish_4_button_down"]
+[connection signal="body_entered" from="AirAreas/Area2D" to="CanvasLayer/TextureProgressBar" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="AirAreas/Area2D" to="Audio" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="AirAreas/Area2D" to="CanvasLayer/ProgressBar" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="AirAreas/Area2D" to="CanvasLayer/TextureProgressBar" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="AirAreas/Area2D" to="Audio" method="_on_area_2d_body_exited"]
-[connection signal="FlashbackOver" from="PlayerTestCharacterBody2D/Flashbacks" to="PlayerTestCharacterBody2D" method="_on_flashbacks_flashback_over"]
-[connection signal="FlashbackTime" from="PlayerTestCharacterBody2D/Flashbacks" to="PlayerTestCharacterBody2D" method="_on_flashbacks_flashback_time"]
-[connection signal="finished" from="PlayerTestCharacterBody2D/Flashbacks/Flashback1/Video" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_video_finished"]
-[connection signal="finished" from="PlayerTestCharacterBody2D/Flashbacks/Flashback2/Video02" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_video_02_finished"]
-[connection signal="Fishcollected" from="Fishes/Fish1" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_1_fishcollected"]
-[connection signal="Fishcollected" from="Fishes/Fish2" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_2_fishcollected"]
-[connection signal="Fishcollected" from="Fishes/Fish3" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_3_fishcollected"]
-[connection signal="Fishcollected" from="Fishes/Fish4" to="PlayerTestCharacterBody2D/Flashbacks" method="_on_fish_4_fishcollected"]
+[connection signal="FlashbackOver" from="Player/Flashbacks" to="Player" method="_on_flashbacks_flashback_over"]
+[connection signal="FlashbackTime" from="Player/Flashbacks" to="Player" method="_on_flashbacks_flashback_time"]
+[connection signal="finished" from="Player/Flashbacks/Flashback1/Video" to="Player/Flashbacks" method="_on_video_finished"]
+[connection signal="finished" from="Player/Flashbacks/Flashback2/Video02" to="Player/Flashbacks" method="_on_video_02_finished"]
+[connection signal="Fishcollected" from="Fishes/Fish1" to="Player/Flashbacks" method="_on_fish_1_fishcollected"]
+[connection signal="Fishcollected" from="Fishes/Fish2" to="Player/Flashbacks" method="_on_fish_2_fishcollected"]
+[connection signal="Fishcollected" from="Fishes/Fish3" to="Player/Flashbacks" method="_on_fish_3_fishcollected"]
+[connection signal="Fishcollected" from="Fishes/Fish4" to="Player/Flashbacks" method="_on_fish_4_fishcollected"]
 [connection signal="finished" from="Audio/Pickup_01_randomized" to="." method="_on_pickup_01_randomized_finished"]

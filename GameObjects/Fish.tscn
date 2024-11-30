@@ -59,6 +59,7 @@ script = ExtResource("1_5nes6")
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 scale = Vector2(1, 0.471259)
 shape = SubResource("CapsuleShape2D_mtrnl")
 
