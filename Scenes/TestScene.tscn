@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://g7xgkwwsalab"]
+[gd_scene load_steps=90 format=3 uid="uid://g7xgkwwsalab"]
 
 [ext_resource type="Script" path="res://Scripts/sceneManager.gd" id="1_dqiju"]
 [ext_resource type="Texture2D" uid="uid://x0u624kbbepl" path="res://layout/old/BG Layout_Page_01.jpg" id="1_fr252"]
@@ -66,6 +66,7 @@
 [ext_resource type="Texture2D" uid="uid://goh32mmwbp40" path="res://layout/details/Forest_detail03.png" id="47_xca5l"]
 [ext_resource type="Texture2D" uid="uid://oqgplyar33m2" path="res://layout/details/Forest_detail02.png" id="48_rvyko"]
 [ext_resource type="AudioStream" uid="uid://x54jkg5kr3r3" path="res://SFX/Fish pick up/randomizer_pickup2.tres" id="50_4j6c6"]
+[ext_resource type="Texture2D" uid="uid://by4prsmnht3qb" path="res://UI/Dialogue.png" id="51_jv7wa"]
 [ext_resource type="AudioStream" uid="uid://d13id6ks81rek" path="res://SFX/Fish pick up/randomizer_pickup.tres" id="51_m661f"]
 [ext_resource type="Script" path="res://Scripts/audio.gd" id="53_ils0b"]
 [ext_resource type="AudioStream" uid="uid://c3o5yxjxuyu0y" path="res://SFX/Memories/Memory appear.wav" id="53_opp6j"]
@@ -837,6 +838,30 @@ texture_over = ExtResource("36_77ykx")
 texture_progress = ExtResource("37_f0jyc")
 script = ExtResource("33_bnt2l")
 
+[node name="Dialogue" type="TextureRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = -62.0
+offset_top = 58.0
+offset_right = 2038.0
+offset_bottom = 1058.0
+scale = Vector2(0.585, 0.585)
+texture = ExtResource("51_jv7wa")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Dialogue"]
+layout_mode = 0
+offset_left = 194.872
+offset_top = 618.803
+offset_right = 1220.87
+offset_bottom = 765.803
+theme_override_font_sizes/normal_font_size = 36
+text = "Click to continue"
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.84, 4.96)
+
 [node name="AirAreas" type="Node2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="AirAreas"]
@@ -967,7 +992,6 @@ scale = Vector2(3.5, 3.5)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(112, -34.5714)
-scale = Vector2(1, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player"]
 

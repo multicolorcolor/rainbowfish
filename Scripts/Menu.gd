@@ -23,5 +23,9 @@ func _on_button_2_button_down() -> void:
 
 
 func _on_texture_button_button_down() -> void:
+	pass
+
+
+func _on_texture_button_pressed() -> void:
 	SignalBus.fish = 0
 	get_tree().change_scene_to_file("res://Scenes/TestScene.tscn")

@@ -188,3 +188,4 @@ libraries = {
 
 [connection signal="button_down" from="Control2/Button2" to="." method="_on_button_2_button_down"]
 [connection signal="button_down" from="Control2/TextureButton" to="." method="_on_texture_button_button_down"]
+[connection signal="pressed" from="Control2/TextureButton" to="." method="_on_texture_button_pressed"]
