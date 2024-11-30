@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://g7xgkwwsalab"]
+[gd_scene load_steps=91 format=3 uid="uid://g7xgkwwsalab"]
 
 [ext_resource type="Script" path="res://Scripts/sceneManager.gd" id="1_dqiju"]
 [ext_resource type="Texture2D" uid="uid://x0u624kbbepl" path="res://layout/old/BG Layout_Page_01.jpg" id="1_fr252"]
@@ -172,6 +172,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwixm"]
 size = Vector2(558, 2152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lxhm"]
+size = Vector2(231, 767.5)
 
 [sub_resource type="Animation" id="Animation_24smq"]
 length = 0.001
@@ -854,7 +857,7 @@ offset_top = 618.803
 offset_right = 1220.87
 offset_bottom = 765.803
 theme_override_font_sizes/normal_font_size = 36
-text = "Click to continue"
+text = "Press Enter to continue"
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
 visible = false
@@ -1186,6 +1189,12 @@ position = Vector2(-582, 206)
 position = Vector2(9960, 1122)
 shape = SubResource("RectangleShape2D_uwixm")
 
+[node name="ColliderDialogue" type="Area2D" parent="Ground"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/ColliderDialogue"]
+position = Vector2(1178, 337)
+shape = SubResource("RectangleShape2D_8lxhm")
+
 [node name="Foreground_details" type="Node2D" parent="."]
 
 [node name="Waterlayer" type="Sprite2D" parent="Foreground_details"]
@@ -1321,6 +1330,7 @@ volume_db = -80.0
 [connection signal="FlashbackTime" from="Player/Flashbacks" to="Player" method="_on_flashbacks_flashback_time"]
 [connection signal="finished" from="Player/Flashbacks/Flashback1/Video" to="Player/Flashbacks" method="_on_video_finished"]
 [connection signal="finished" from="Player/Flashbacks/Flashback2/Video02" to="Player/Flashbacks" method="_on_video_02_finished"]
+[connection signal="area_entered" from="Ground/ColliderDialogue" to="." method="_on_collider_dialogue_area_entered"]
 [connection signal="Fishcollected" from="Fishes/Fish1" to="Player/Flashbacks" method="_on_fish_1_fishcollected"]
 [connection signal="Fishcollected" from="Fishes/Fish2" to="Player/Flashbacks" method="_on_fish_2_fishcollected"]
 [connection signal="Fishcollected" from="Fishes/Fish3" to="Player/Flashbacks" method="_on_fish_3_fishcollected"]

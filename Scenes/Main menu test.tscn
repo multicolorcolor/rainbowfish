@@ -186,6 +186,15 @@ libraries = {
 "": SubResource("AnimationLibrary_xoh55")
 }
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_left = -434.0
+offset_top = -246.0
+offset_right = 498.0
+offset_bottom = -125.0
+theme_override_font_sizes/normal_font_size = 66
+text = "The Curse of The Rainbow Fish"
+
 [connection signal="button_down" from="Control2/Button2" to="." method="_on_button_2_button_down"]
 [connection signal="button_down" from="Control2/TextureButton" to="." method="_on_texture_button_button_down"]
 [connection signal="pressed" from="Control2/TextureButton" to="." method="_on_texture_button_pressed"]

@@ -95,3 +95,7 @@ func _on_fish_3_button_down() -> void:
 
 func _on_fish_4_button_down() -> void:
 	pass # Replace with function body.
+
+
+func _on_collider_dialogue_area_entered(area: Area2D) -> void:
+	%Dialogue.visible = false
