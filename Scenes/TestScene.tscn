@@ -850,12 +850,21 @@ offset_bottom = 1058.0
 scale = Vector2(0.585, 0.585)
 texture = ExtResource("51_jv7wa")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Dialogue"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Dialogue"]
 layout_mode = 0
 offset_left = 194.872
-offset_top = 618.803
-offset_right = 1220.87
-offset_bottom = 765.803
+offset_top = 617.094
+offset_right = 640.872
+offset_bottom = 691.094
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Dialogue"]
+layout_mode = 0
+offset_left = 208.547
+offset_top = 620.513
+offset_right = 1234.55
+offset_bottom = 767.513
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 36
 text = "Press Enter to continue"
 
@@ -864,6 +873,18 @@ visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(28.84, 4.96)
+
+[node name="GameInstructions" type="RichTextLabel" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+offset_left = 93.0
+offset_top = 558.0
+offset_right = 1118.0
+offset_bottom = 776.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 21
+text = "Use arrow keys to catch fish. Check your bag for your fish. Avoid drowning by coming up for air!"
 
 [node name="AirAreas" type="Node2D" parent="."]
 

@@ -8,7 +8,8 @@ extends CharacterBody2D
 @export var SPEED = 300.0
 @export var JUMP_VELOCITY = -400.0
 
-
+func _ready() -> void:
+	set_physics_process(false)
 func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("ui_left"):
@@ -65,6 +66,8 @@ func _input(event):
 			flashback2.visible = false
 		if event.keycode ==KEY_ENTER:
 			%Dialogue.visible = false
+			%GameInstructions.visible = true
+			set_physics_process(true)
 	
 	
 
