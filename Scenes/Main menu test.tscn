@@ -195,6 +195,14 @@ offset_bottom = -125.0
 theme_override_font_sizes/normal_font_size = 66
 text = "The Curse of The Rainbow Fish"
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = -555.0
+offset_top = 271.0
+offset_right = -121.0
+offset_bottom = 311.0
+theme_override_font_sizes/normal_font_size = 27
+text = "Press Esc to Exit the game"
+
 [connection signal="button_down" from="Control2/Button2" to="." method="_on_button_2_button_down"]
 [connection signal="button_down" from="Control2/TextureButton" to="." method="_on_texture_button_button_down"]
 [connection signal="pressed" from="Control2/TextureButton" to="." method="_on_texture_button_pressed"]

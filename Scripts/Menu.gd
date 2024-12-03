@@ -29,3 +29,8 @@ func _on_texture_button_button_down() -> void:
 func _on_texture_button_pressed() -> void:
 	SignalBus.fish = 0
 	get_tree().change_scene_to_file("res://Scenes/TestScene.tscn")
+	
+func _input(event):
+	if event is InputEventKey and event.is_pressed():
+		if event.keycode == KEY_ESCAPE:
+			get_tree().quit()
